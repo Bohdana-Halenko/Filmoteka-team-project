@@ -1,4 +1,5 @@
 import gallery from '../templates/gallery.hbs';
+import API from './apiService';
 
 const galleryList = document.querySelector('.gallery-list');
 
@@ -8,7 +9,10 @@ function loadStartGallery(data) {
   galleryList.insertAdjacentHTML('beforeend', markup);
 }
 
-console.log(gallery);
+API.getTrendingMovie(1).then(({ resultsTranding }) => {
+  loadStartGallery(resultsTranding);
+});
+// console.log(gallery);
 
 // начальный рендер галереи
 window.addEventListener('DOMContentLoaded', loadStartGallery);
