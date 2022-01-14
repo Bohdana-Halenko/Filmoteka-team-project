@@ -38,15 +38,15 @@ img {
   max-width: 1024px;
   padding: 0 71px;
 
-  @media screen and (min-width: 480px) {
-    width: 480px;
+  @media screen and (min-width: $mobile) {
+    width: 320px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 768px;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 1200px;
+  @media screen and (min-width: $desktop) {
+    width: 1024px;
   }
 }
