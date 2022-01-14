@@ -44,9 +44,9 @@ img {
   padding: 0 71px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container {
-    width: 480px;
+    width: 320px;
   }
 }
 
@@ -56,9 +56,9 @@ img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .container {
-    width: 1200px;
+    width: 1024px;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filmoteka</title>
-  <link rel="stylesheet" href="./css/main.min.css"/>
+  <link rel="stylesheet" href="./sass/main.css"/>
   <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
   <link type="Image/x-icon" href="/favicon.ico" rel="icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -17,10 +17,17 @@
 </head>
 
 <body>
-
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <!--header-->
+  <include src="./partials/header.html"></include>
+  <!-- main -->
+  <main>
+    <include src="./partials/gallery.html"></include>
+    <include src="./partials/pagination.html"></include>
+    <include src="./partials/modal.html"></include> 
+  </main>
+  <!-- footer -->
+  <include src="./partials/footer.html"></include>
+  <include src="./partials/footer-modal.html"></include>
 
   <!--Script-->
   <script src="./js/index.js"></script>
