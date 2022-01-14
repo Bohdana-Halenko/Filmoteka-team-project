@@ -1,1 +1,16 @@
-{"version":3,"sources":["../sass/base/_all-styles.scss","../sass/base/_variables.scss","main.css"],"names":[],"mappings":"AAAA,KACE,aCM0B,CDL1B,wBCDgC,CDEhC,+BCgBwC,CDfxC,eAAgB,CAChB,aECF,CFCA,iBAGE,6BAAsB,CACvB,qBEED,CFCA,WAIE,eAAa,CACd,YEED,CAEA,GFAE,eAAU,CACV,SAAS,CACV,QEED,CAEA,EFDE,oBAAe,CAChB,cEGD,CAEA,IFFE,aAAW,CACX,cAAY,CACb,WEID,CAEA,WFHE,aAAW,CACX,gBAAe,CAahB,cEPD,CAEA,oCACE,WFID,WEFC,CACF,CAEA,oCACE,WFFD,WEIC,CACF,CAEA,qCACE,WFRD,YEUC,CACF","file":"main.css"}
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,IAAI,CAAC;EACH,KAAK,EDMc,OAAO;ECL1B,gBAAgB,EDDS,OAAO;ECEhC,WAAW,EDgBS,QAAQ,EAAE,UAAU;ECfxC,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,MAAM;CACf;;AACD,AAAA,CAAC;AACD,OAAO;AACP,QAAQ,CAAC;EACP,UAAU,EAAE,UAAU;CACvB;;AAED,AAAA,EAAE;AACF,EAAE;AACF,EAAE;AACF,CAAC,CAAC;EACA,aAAa,EAAE,CAAC;EAChB,UAAU,EAAE,CAAC;CACd;;AAED,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACV;;AACD,AAAA,CAAC,CAAC;EACA,eAAe,EAAE,IAAI;EACrB,MAAM,EAAE,OAAO;CAChB;;AACD,AAAA,GAAG,CAAC;EACF,OAAO,EAAE,KAAK;EACd,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;CACb;;AACD,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,MAAM;EACd,SAAS,EAAE,MAAM;EACjB,OAAO,EAAE,MAAM;CAahB;;AAXC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EALrC,AAAA,UAAU,CAAC;IAMP,KAAK,EAAE,KAAK;GAUf;;;AAPC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EATrC,AAAA,UAAU,CAAC;IAUP,KAAK,EAAE,KAAK;GAMf;;;AAHC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAbtC,AAAA,UAAU,CAAC;IAcP,KAAK,EAAE,MAAM;GAEhB",
+    "sources": [
+        "../sass/main.scss",
+        "../sass/base/_variables.scss",
+        "../sass/base/_all-styles.scss",
+        "../sass/components/_header.scss",
+        "../sass/components/_gallery.scss",
+        "../sass/components/_modal-card.scss",
+        "../sass/components/_footer.scss",
+        "../sass/components/_modal-footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
