@@ -44,7 +44,7 @@ async function getMovieDetails(movieId) {
     return await axios
         .get(url)
         .then((response) => {
-            // console.log('Details response', response.data);
+            console.log('Details response', response.data);
             return response.data
         })
         .catch((error) => {console.error("Something wrong with getMovieDetails fetch", error.message)

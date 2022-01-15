@@ -1,7 +1,10 @@
 import '../sass/main.scss'
+
 import axios from 'axios';
 import Pagination from 'tui-pagination';
+
 import './loadStartGallery';
+import './loadModalCard';
 
 import API from './apiService';
 import SCSS from  '../sass/main.scss'
