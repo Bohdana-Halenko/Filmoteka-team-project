@@ -82,4 +82,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"../templates/modal-card.hbs":"LkF4","./apiService":"eQwa"}],"QvaY":[function(require,module,exports) {
 "use strict";var r=u(require("../sass/main.scss")),e=u(require("axios")),a=u(require("tui-pagination"));require("./loadStartGallery"),require("./loadModalCard");var i=u(require("./apiService"));function u(r){return r&&r.__esModule?r:{default:r}}
 },{"../sass/main.scss":"clu1","axios":"dZBD","tui-pagination":"jPMh","./loadStartGallery":"R7mJ","./loadModalCard":"CKAo","./apiService":"eQwa"}]},{},["QvaY"], null)
-//# sourceMappingURL=/Filmoteka-team-project/js.1491b17c.js.map
+//# sourceMappingURL=/Filmoteka-team-project/js.171f6761.js.map
