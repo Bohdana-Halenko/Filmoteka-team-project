@@ -9,12 +9,12 @@ function loadStartGallery(data) {
   galleryList.insertAdjacentHTML('beforeend', markup);
 }
 
-API.getTrendingMovie(1).then(({ resultsTranding }) => {
-  loadStartGallery(resultsTranding);
+API.getTrendingMovie().then(({ resultsTrending }) => {
+  loadStartGallery(resultsTrending);
 });
 // console.log(gallery);
 
-// начальный рендер галереи
-window.addEventListener('DOMContentLoaded', loadStartGallery);
+// начальный рендер галереи - дает баг в отрисовке первой карточки
+// window.addEventListener('DOMContentLoaded', loadStartGallery);
 
 export { loadStartGallery };

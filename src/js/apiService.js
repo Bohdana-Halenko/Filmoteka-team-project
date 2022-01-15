@@ -4,17 +4,16 @@ const BASE_URL = `https://api.themoviedb.org/3`;
 const API_KEY = `6a7bc4e26417129845bc117e7a600f1d`;
 
 // Получение трендовых фильмов - главная страница
-// totalPages - берем в панагинацию, results - в разметку
 
-async function getTrendingMovie(page) {
-    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`;
+async function getTrendingMovie() {
+    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
     return await axios
         .get(url)
         .then((response) => {
             // console.log('Trending response', response.data);
             return {
-                totalPagesTranding: response.data.total_pages,
-                resultsTranding: response.data.results
+                totalTrending: response.data.total_results,
+                resultsTrending: response.data.results
             }
         })
         .catch((error) => {console.error("Something wrong with TrendingMovie fetch", error.message) 
@@ -22,15 +21,15 @@ async function getTrendingMovie(page) {
   }
 
 // Получение фильмов по поиску
-// totalPages - берем в панагинацию, results - в разметку
-async function getMovieBySearch(searchQuery, page) {
-    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=${page}`;
+
+async function getMovieBySearch(searchQuery) {
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchQuery}`;
     return await axios
         .get(url)
         .then((response) => {
             // console.log('Search response', response.data);
            return {
-                totalPagesSearch: response.data.total_pages,
+                totalSearch: response.data.total_results,
                 resultsSearch: response.data.results
             }
         })
@@ -39,6 +38,7 @@ async function getMovieBySearch(searchQuery, page) {
   }
 
 // Получение детальной информации о фильме - в модалку
+
 async function getMovieDetails(movieId) {
     const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
     return await axios
