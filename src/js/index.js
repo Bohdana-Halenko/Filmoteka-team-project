@@ -6,6 +6,7 @@ import Pagination from 'tui-pagination';
 import './header';
 import './loadStartGallery';
 import './loadModalCard';
+import './modalFooter';
 
 import API from './apiService';
 import SCSS from  '../sass/main.scss'
