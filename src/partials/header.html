@@ -7,10 +7,8 @@
       </svg>
       <p class="site-name">Filmoteka</p>
       <ul class="nav-list list">
-        <li class="nav-list__item-home">
-          <a href="./index.html" class="nav-list__link-home nav-list__item-home-active link"
-            >HOME</a
-          >
+        <li class="nav-list__item-home nav-list__item-home-active">
+          <a href="./index.html" class="nav-list__link-home link">HOME</a>
         </li>
         <li class="nav-list__item-library">
           <a href="" class="nav-list__link-library link">MY LIBRARY</a>
@@ -23,6 +21,10 @@
     <div class="search">
       <form class="search__form" action="">
         <input class="search__input" type="text" placeholder="Поиск фильмов" />
+        <svg class="search__img">
+          <use href="/images/icons/sprite.svg#icon-search"></use>
+        </svg>
+        <button class="search__btn" type="button"></button>
       </form>
     </div>
     <div class="library-btns is-hidden">

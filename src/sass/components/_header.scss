@@ -2,6 +2,17 @@
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 53px;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.17;
+}
+.header__container-library {
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 53px;
   max-width: 1024px;
   margin: 0 auto;
   font-weight: 500;
@@ -66,17 +77,26 @@
 .search__form {
   display: flex;
   width: 280px;
+  height: 20px;
   margin: 0 auto;
-  border-bottom: 0.5px solid $primary-background-color;
+  border-bottom: 0.2px solid #f7f7f7bd;
 }
 .search__input {
   border: none;
   outline: none;
   background: $transparent;
   width: 100%;
-  background: url('../images/header/search.png') no-repeat center right;
 }
-
+.search__img {
+  width: 15px;
+  height: 15px;
+  margin-right: -20px;
+}
+.search__btn {
+  background-color: $transparent;
+  border: none;
+  width: 20px;
+}
 ::-webkit-input-placeholder {
   color: $lighter-text-color;
 }
@@ -116,10 +136,14 @@
   background-color: $accent-color;
 }
 
+
 @media screen and (max-width: 767px) {
   .header__container {
     background-image: url('../images/header/header-main-mobile-1x.jpg');
     height: 230px;
+  }
+  .header__container-library {
+    background-image: url('../images/header/header-library-mobile-1x.jpg');
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
@@ -128,12 +152,18 @@
   .header__container {
     background-image: url('../images/header/header-main-mobile-2x.jpg');
   }
+  .header__container-library {
+    background-image: url('../images/header/header-library-mobile-2x.jpg');
+  }
 }
 
 @media screen and (min-width: 768px) {
   .header__container {
     background-image: url('../images/header/header-main-tablet-1x.jpg');
     height: 230px;
+  }
+  .header__container-library {
+    background-image: url('../images/header/header-library-tablet-1x.jpg');
   }
   .logo__img {
     margin-top: 46px;
@@ -163,11 +193,17 @@
   .header__container {
     background-image: url('../images/header/header-main-tablet-2x.jpg');
   }
+  .header__container-library {
+    background-image: url('../images/header/header-library-tablet-2x.jpg');
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .header__container {
     background-image: url('../images/header/header-main-desktop-1x.jpg');
+  }
+  .header__container-library {
+    background-image: url('../images/header/header-library-desktop-1x.jpg');
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
@@ -175,5 +211,8 @@
   (min-resolution: 2dppx) and (min-width: 1024px) {
   .header__container {
     background-image: url('../images/header/header-main-desktop-2x.jpg');
+  }
+  .header__container-library {
+    background-image: url('../images/header/header-library-desktop-2x.jpg');
   }
 }
