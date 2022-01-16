@@ -3,6 +3,7 @@ import '../sass/main.scss'
 import axios from 'axios';
 import Pagination from 'tui-pagination';
 
+import './header';
 import './loadStartGallery';
 import './loadModalCard';
 
