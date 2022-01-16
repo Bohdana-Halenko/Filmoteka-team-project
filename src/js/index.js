@@ -5,9 +5,10 @@ import Pagination from 'tui-pagination';
 
 import './loadStartGallery';
 import './loadModalCard';
+import './convertData';
 
 import API from './apiService';
-import SCSS from  '../sass/main.scss'
+
 
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));

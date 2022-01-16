@@ -1,61 +1,58 @@
-<div class="backdrop is-hidden" data-modal>
+<div class="modal__backdrop"></div>
 
 <div class="modal__container">
 
-    <button class="close-button" data-modal-close>X
-            {{!-- <svg class="close-icon" width="18" height="18">
-                <use href="./images/icons.svg#icon-close"></use>
-            </svg> --}}
-    </button>
+    <button class="close-button">X</button>
+    
+    <div class="modal__content">
+        
+            {{#if poster_path}}
+            <img class="film__image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}"
+                alt="{{title}}"/>
+            {{/if}}
+            {{#unless poster_path}}
+            <img class="film__image" src="https://images.unsplash.com/photo-1634157703702-3c124b455499?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
+                alt="Film poster">
+            {{/unless}}
+        
 
-    <div class="modal__poster">
-        {{#if poster_path}}
-        <img class="film__image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}"
-            alt="{{title}}"/>
-        {{/if}}
-        {{#unless poster_path}}
-        <img class="film__image" src="https://images.unsplash.com/photo-1634157703702-3c124b455499?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
-            alt="Film poster">
-        {{/unless}}
-    </div>
+        <div class="film__decription">
 
-    <div class="modal__information">
-
-        <div>
             <h1 class="film__title">{{title}}</h1>
-           
+
+                <div class="grid-container">
+
                     <p class="film__info">Vote / Votes</p>
-                    <span class="film__info--inner">{{vote_average}}</span>
-                    <span class="film__info--divider"> / </span>
-                    <span class="film__info--inner">{{vote_count}}</span>
-                    
+                    <div class="film__value">
+                        <span class="film__vote film__vote--orange">{{vote_average}}</span>
+                        <span>/</span>
+                        <span class="film__vote">{{vote_count}}</span>
+                    </div>
+
                     <p class="film__info ">Popularity</p>
-                    <span class="film__info--inner">{{popularity}}</span>
-               
+                    <span class="film__value">{{popularity}}</span>
+                
                     <p class="film__info">Original title</p>
-                    <span class="film__info--inner">{{original_title}}</span>
-               
+                    <span class="film__original">{{original_title}}</span>
+                
                     <p class="film__info">Genre</p>
-                  
-                        <ul class="film__genres">
+                        <ul class="film__value">
                             {{#each genres}}
-                            <li class="film__info--inner">{{this.name}}</li>
+                            <li>{{this.name}}</li>
                             {{/each}}
                         </ul>
-                       
-                  
-        </div>
 
-        <div>
+                </div>        
+                    
             <h2 class="film__about">About</h2>
-            <span class="film__about--inner">{{overview}}</span>
-        </div>
+            <span class="film__overview">{{overview}}</span>
+            
+            <div class="modal__buttons">
+                <button type="button" class=" film__button btn__watch">Add to watched</button>
+                <button type="button" class=" film__button btn__queue">Add to queue</button>
+            </div>
 
-        <div class="modal__button">
-            <button type="button" class=" film__button btn__watch">Add to watched</button>
-            <button type="button" class=" film__button btn__queue">Add to queue</button>
-        </div>
-
+        <div>    
     </div>
 </div>
-</div>
+
