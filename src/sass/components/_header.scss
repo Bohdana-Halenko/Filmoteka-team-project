@@ -66,17 +66,26 @@
 .search__form {
   display: flex;
   width: 280px;
+  height: 20px;
   margin: 0 auto;
-  border-bottom: 0.5px solid $primary-background-color;
+  border-bottom: 0.2px solid #f7f7f7bd;
 }
 .search__input {
   border: none;
   outline: none;
   background: $transparent;
   width: 100%;
-  background: url('../images/header/search.png') no-repeat center right;
 }
-
+.search__img {
+  width: 15px;
+  height: 15px;
+  margin-right: -20px;
+}
+.search__btn {
+  background-color: $transparent;
+  border: none;
+  width: 20px;
+}
 ::-webkit-input-placeholder {
   color: $lighter-text-color;
 }
