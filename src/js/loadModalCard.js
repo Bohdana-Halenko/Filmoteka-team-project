@@ -12,35 +12,35 @@ function clickOnMovie(e) {
       return;
     }
     let movieId = e.target.dataset.id;
-    API.getMovieDetails(movieId).then(({ data }) => renderModalCard(data));
+    API.getMovieDetails(movieId).then(( res ) => renderModalCard(res));
  
 }
 
-function renderModalCard(data) {
-  const markup = modalCardTpl(data);
+function renderModalCard(res) {
+  const markup = modalCardTpl(res);
   
   modalCard.innerHTML = markup;
   modalCard.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 
   const modalBackdrop = document.querySelector('.modal__backdrop');
-  modalBackdrop.addEventListener('click', modalClosing);
+  modalBackdrop.addEventListener('click', modalClose);
   
   const closeButton = document.querySelector('.close-button')
-  closeButton.addEventListener('click', modalClosing);
+  closeButton.addEventListener('click', modalClose);
 
-  window.addEventListener('keydown', modalClosinByEsc);
+  window.addEventListener('keydown', modalCloseByEsc);
 }
 
-function modalClosing() {
+function modalClose() {
   modalCard.classList.remove('is-open');
   document.body.style.overflow = '';
-   window.removeEventListener('keydown', modalClosinByEsc);
+  window.removeEventListener('keydown', modalCloseByEsc);
 }
 
-function modalClosinByEsc(event) {
+function modalCloseByEsc(event) {
   if (event.code === 'Escape') {
-    modalClosing();
+    modalClose();
   }
 }
 
