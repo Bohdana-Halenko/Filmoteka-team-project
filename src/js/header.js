@@ -15,6 +15,7 @@ function changeClassToHome(){
     libraryButtons.classList.add('is-hidden');
 
     headerContainer.classList.remove('header__container-library');
+    
 } 
 function changeClassToLibrary(e){
     e.preventDefault();
