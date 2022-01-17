@@ -5,20 +5,32 @@ const API_KEY = `6a7bc4e26417129845bc117e7a600f1d`;
 
 // Получение трендовых фильмов - главная страница
 
-async function getTrendingMovie() {
-    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
-    return await axios
-        .get(url)
-        .then((response) => {
-            // console.log('Trending response', response.data);
-            return {
-                totalTrending: response.data.total_results,
-                resultsTrending: response.data.results
-            }
-        })
-        .catch((error) => {console.error("Something wrong with TrendingMovie fetch", error.message) 
-    })
-  }
+export const getTrendingMovie = () => {
+    return axios
+        .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
+        .then((response) => ({
+            totalTrending: response.data.total_results,
+            resultsTrending: response.data.results,
+        }))
+            .catch((error) => {
+                console.error("Something wrong with TrendingMovie fetch", error.message)
+            })
+        }
+
+// async function getTrendingMovie() {
+//     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
+//     return await axios
+//         .get(url)
+//         .then((response) => {
+//             // console.log('Trending response', response.data);
+//             return {
+//                 totalTrending: response.data.total_results,
+//                 resultsTrending: response.data.results
+//             }
+//         })
+//         .catch((error) => {console.error("Something wrong with TrendingMovie fetch", error.message) 
+//     })
+//   }
 
 // Получение фильмов по поиску
 

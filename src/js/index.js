@@ -1,10 +1,23 @@
 import '../sass/main.scss'
 
 import axios from 'axios';
-import Pagination from 'tui-pagination';
 
 import './header';
 import './loadStartGallery';
+
+
+// Pagination
+import { getTrendingMovie, getMovieBySearch, getMovieDetails, getGenres } from './apiService';
+import { renderPaginationTrendingMovie } from "./pagination";
+
+
+getTrendingMovie()
+    .then((films) => {
+        renderPaginationTrendingMovie(films.totalTrending)
+    })
+    .catch((error) => console.error(error.message));
+
+
 import './loadModalCard';
 import './convertData';
 
