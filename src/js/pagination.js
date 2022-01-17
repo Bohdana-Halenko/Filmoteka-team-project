@@ -1,5 +1,6 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+import '../sass/main.css';
+
 
 
 export function renderPaginationTrendingMovie(totalItems) {
@@ -7,7 +8,7 @@ export function renderPaginationTrendingMovie(totalItems) {
     const options = {
         totalItems,
         itemsPerPage: 20,
-        visiblePage: 20,
+        visiblePages: 5,
         page: 1,
         centerAling: false,
         firstItemClassName: 'tui-first-child',
@@ -30,14 +31,9 @@ export function renderPaginationTrendingMovie(totalItems) {
         }
     }
 
-    const instance = new Pagination(container, options);
+    const pagination = new Pagination(container, options);
 
-    instance.on('afterMove', function (eventData) {
+    pagination.on('afterMove', function (eventData) {
         console.log( eventData.page);
     });
 }
-    
-
-    // instance.getCurrentPage('afterMove', function (eventData) {
-    //     console.log( eventData.page);
-    // });
