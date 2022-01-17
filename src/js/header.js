@@ -16,7 +16,8 @@ function changeClassToHome(){
 
     headerContainer.classList.remove('header__container-library');
 } 
-function changeClassToLibrary(){
+function changeClassToLibrary(e){
+    e.preventDefault();
     navElemLibrary.classList.add('nav-list__item-library-active');
     navElemHome.classList.remove('nav-list__item-home-active');   
 
