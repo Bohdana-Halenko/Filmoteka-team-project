@@ -13,13 +13,9 @@ function loadStartGallery(data) {
 }
 
 API.getTrendingMovie().then(({ resultsTrending }) => {
-  // transformGenres(resultsTrending);
-  // transformData(resultsTrending);
+  transformData(resultsTrending);
+  transformGenres(resultsTrending);
   loadStartGallery(resultsTrending);
 });
-// console.log(gallery);
-
-// начальный рендер галереи - дает баг в отрисовке первой карточки
-// window.addEventListener('DOMContentLoaded', loadStartGallery);
 
 export { loadStartGallery };

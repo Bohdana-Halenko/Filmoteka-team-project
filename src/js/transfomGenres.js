@@ -1,10 +1,7 @@
-import allGenres from '../js/genres.json';
+import genresJson from './genres.json';
 
 // Извлечение локальных жанров из json файла
-function getGenres() {
-  const { genreID } = allGenres;
-  return genreID;
-}
+const genres = genresJson['genres'];
 
 function transformGenres(filmsData) {
   filmsData.map(item => {
@@ -12,12 +9,7 @@ function transformGenres(filmsData) {
 
     if (item.genre_ids) {
       item.genre_ids.forEach(id => {
-        const found = genreID.find(item => item.id === id);
-        newGenre.push(found.name);
-      });
-    } else if (item.genres.length !== 0 && typeof item.genres !== 'string') {
-      item.genres.forEach(({ id }) => {
-        const found = genreID.find(item => item.id === id);
+        const found = genres.find(item => item.id === id);
         newGenre.push(found.name);
       });
     }
