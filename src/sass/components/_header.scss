@@ -1,10 +1,14 @@
+.header {
+  background-color: $primary-text-color;
+}
 .header__container {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 53px;
-  max-width: 1024px;
+  width: 1024px;
+  height: 230px;
   margin: 0 auto;
+  padding-top: 46px;
   font-weight: 500;
   line-height: 1.17;
 
@@ -12,9 +16,10 @@
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 53px;
-    max-width: 1024px;
+    width: 1024px;
+    height: 230px;
     margin: 0 auto;
+    padding-bottom: 46px;
     font-weight: 500;
     line-height: 1.17;
   }
@@ -24,18 +29,15 @@
   visibility: hidden;
   pointer-events: none;
 }
-.logo__img {
-  margin-top: 46px;
-  margin-left: 20px;
-  width: 24px;
-  height: 24px;
+.logo {
+  display: flex;
+  &__img {
+    width: 24px;
+    height: 24px;
+  }
 }
 .site-name {
   font-size: 0px;
-
-  &__link {
-    margin-bottom: 40px;
-  }
 }
 .nav {
   display: flex;
@@ -48,18 +50,19 @@
 .nav-list {
   display: flex;
   justify-content: end;
-  margin-top: 58px;
-  margin: 58px 0px 41px auto;
   position: relative;
 
   &__link-home--accent:hover {
     color: $accent-color;
+    transition-duration: 0.5s;
   }
   &__link-library--accent:hover {
     color: $accent-color;
+    transition-duration: 0.5s;
   }
   &__link-sign-in--accent:hover {
     color: $accent-color;
+    transition-duration: 0.5s;
   }
   &__item-sign-in {
     margin-right: 20px;
@@ -158,7 +161,6 @@
 @media screen and (max-width: 767px) {
   .header__container {
     background-image: url('../images/header/header-main-mobile-1x.jpg');
-    height: 230px;
 
     &-library {
       background-image: url('../images/header/header-library-mobile-1x.jpg');
@@ -180,19 +182,12 @@
 @media screen and (min-width: 768px) {
   .header__container {
     background-image: url('../images/header/header-main-tablet-1x.jpg');
-    height: 230px;
 
     &-library {
       background-image: url('../images/header/header-library-tablet-1x.jpg');
     }
   }
-  .logo__img {
-    margin-top: 46px;
-    margin-left: 71px;
-    margin-right: 10px;
-  }
   .site-name {
-    margin-top: 40px;
     font-size: 30px;
   }
   .search__form {

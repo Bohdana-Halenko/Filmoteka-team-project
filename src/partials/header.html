@@ -1,12 +1,12 @@
-<header>
+<header class="header">
   <div class="header__container">
     <nav class="nav">
       <a href="./index.html" class="logo logo__link">
         <svg class="logo__img">
           <use href="/images/icons/sprite.svg#icon-logo"></use>
         </svg>
+        <p class="site-name">Filmoteka</p>
       </a>
-      <a class="site-name__link" href="./index.html"> <p class="site-name">Filmoteka</p> </a>
       <ul class="nav-list list">
         <li class="nav-list__item-home nav-list__item-home-active">
           <a href="./index.html" class="nav-list__link-home nav-list__link-home--accent link"
@@ -25,7 +25,16 @@
     </nav>
     <div class="search">
       <form class="search__form" action="">
-        <input class="search__input" type="text" placeholder="Поиск фильмов" />
+        <input
+          class="search__input"
+          type="text"
+          name="film-name"
+          pattern="[a-z]"
+          minlength="3"
+          maxlength="20"
+          placeholder="Поиск фильмов"
+          required
+        />
         <svg class="search__img">
           <use href="/images/icons/sprite.svg#icon-search"></use>
         </svg>

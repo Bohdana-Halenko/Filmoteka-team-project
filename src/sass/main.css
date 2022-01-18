@@ -62,13 +62,17 @@ img {
   }
 }
 
+.header {
+  background-color: #000;
+}
 .header__container {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 53px;
-  max-width: 1024px;
+  width: 1024px;
+  height: 230px;
   margin: 0 auto;
+  padding-bottom: 46px;
   font-weight: 500;
   line-height: 1.17;
 }
@@ -77,9 +81,10 @@ img {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 53px;
-  max-width: 1024px;
+  width: 1024px;
+  height: 230px;
   margin: 0 auto;
+  padding-top: 46px;
   font-weight: 500;
   line-height: 1.17;
 }
@@ -89,20 +94,16 @@ img {
   visibility: hidden;
   pointer-events: none;
 }
-
+.logo {
+  display: flex;
+}
 .logo__img {
-  margin-top: 46px;
-  margin-left: 20px;
   width: 24px;
   height: 24px;
 }
 
 .site-name {
   font-size: 0px;
-}
-
-.site-name__link {
-  margin-bottom: 40px;
 }
 
 .nav {
@@ -117,8 +118,6 @@ img {
 .nav-list {
   display: flex;
   justify-content: end;
-  margin-top: 58px;
-  margin: 58px 0px 41px auto;
   position: relative;
 }
 
@@ -269,13 +268,7 @@ img {
   .header__container-library {
     background-image: url('../images/header/header-library-tablet-1x.jpg');
   }
-  .logo__img {
-    margin-top: 46px;
-    margin-left: 71px;
-    margin-right: 10px;
-  }
   .site-name {
-    margin-top: 40px;
     font-size: 30px;
   }
   .search__form {
