@@ -1,6 +1,9 @@
 import gallery from '../templates/gallery.hbs';
 import API from './apiService';
 
+import transformData from './transformData';
+import transformGenres from './transfomGenres';
+
 const galleryList = document.querySelector('.gallery-list');
 
 function loadStartGallery(data) {
@@ -10,6 +13,8 @@ function loadStartGallery(data) {
 }
 
 API.getTrendingMovie().then(({ resultsTrending }) => {
+  // transformGenres(resultsTrending);
+  // transformData(resultsTrending);
   loadStartGallery(resultsTrending);
 });
 // console.log(gallery);
