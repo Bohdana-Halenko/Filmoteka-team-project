@@ -128,18 +128,11 @@
   color: $lighter-text-color;
 }
 
-.library-btns {
+.library__btns {
   text-align: center;
 }
-.btn-watched {
-  width: 130px;
-  margin-right: 8px;
-}
-.btn-queue {
-  width: 130px;
-  margin-left: 7px;
-}
-.library-btn {
+
+.library__btn {
   height: 44px;
   border: 1px solid $lighter-text-color;
   border-radius: 5px;
@@ -154,7 +147,14 @@
     background-color: $accent-color;
   }
 }
-
+.library__btn-watched {
+  width: 130px;
+  margin-right: 8px;
+}
+.library__btn-queue {
+  width: 130px;
+  margin-left: 7px;
+}
 @media screen and (max-width: 767px) {
   .header__container {
     background-image: url('../images/header/header-main-mobile-1x.jpg');
@@ -199,11 +199,11 @@
     width: 336px;
   }
 
-  .btn-watched {
+  .library__btn-watched {
     width: 136px;
     margin-right: 5px;
   }
-  .btn-queue {
+  .library__btn-queue {
     width: 136px;
     margin-left: 5px;
   }
