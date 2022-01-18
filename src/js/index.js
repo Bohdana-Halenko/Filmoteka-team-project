@@ -26,6 +26,9 @@ import './modalFooter';
 
 import API from './apiService';
 
+//Loader
+import './loader';
+
 
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));
