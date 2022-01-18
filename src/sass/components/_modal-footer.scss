@@ -64,7 +64,7 @@
   &:not(:last-child) {
     margin-bottom: 15px;
     @media screen and (min-width: $tablet) {
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       margin-right: 30px;
     }
     @media screen and (min-width: $desktop) {
@@ -78,7 +78,7 @@
   }
   &:nth-last-child(-n + 3) {
     @media screen and (min-width: $tablet) {
-      margin-bottom: 0;
+      margin-bottom: 30px;
     }
   }
 }
