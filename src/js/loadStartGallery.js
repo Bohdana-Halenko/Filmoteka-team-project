@@ -3,6 +3,9 @@ import API from './apiService';
 import transformData from './transformData';
 import transformGenres from './transfomGenres';
 
+// номер страницы открываемы по умолчанию
+const page = 1;
+
 // нашли лого
 const homeLogo = document.querySelector('.logo__link');
 
@@ -21,20 +24,20 @@ function loadStartGallery(data) {
 }
 
 // функция получения данных с сервера и коррекция даты и жанров
-function dataRequest() {
-  API.getTrendingMovie().then(({ resultsTrending }) => {
+function dataRequest(page) {
+  API.getTrendingMovie(page).then(({ resultsTrending }) => {
     transformData(resultsTrending);
     transformGenres(resultsTrending);
     loadStartGallery(resultsTrending);
   });
 }
 // вызов функции рендера галереи при загрузке страницы
-dataRequest();
+dataRequest(page);
 
 // функция рендера галереи без перезагрузки страницы
 function renderClickLogo(evt) {
   evt.preventDefault();
-  dataRequest();
+  dataRequest(1);
 }
 
 export { loadStartGallery };
