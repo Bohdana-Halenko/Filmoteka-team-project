@@ -27,6 +27,7 @@ function changeClassToLibrary(e){
     navElemHome.classList.remove('nav-list__item-home-active');   
 
     searchForm.classList.add('is-hidden');
+    searchForm.classList.remove('search');
     libraryButtons.classList.remove('is-hidden');
 
     headerContainer.classList.remove('header__container');

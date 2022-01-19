@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import '../sass/main.css';
+// import '../sass/main.css';
 
 
 
