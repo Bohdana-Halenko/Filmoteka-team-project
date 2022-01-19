@@ -17,7 +17,6 @@ getTrendingMovie()
 
 import './loadModalCard';
 
-
 import './modalFooter';
 
 import './renderOnClickLogo';
@@ -27,7 +26,7 @@ import API from './apiService';
 //Loader
 import './loader';
 
-import './authRegister';
+// import './authRegister';
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));
 // API.getMovieBySearch('comedy').then(res => console.log('Search res', res));
