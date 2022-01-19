@@ -16,7 +16,7 @@ getTrendingMovie()
   .catch(error => console.error(error.message));
 
 import './loadModalCard';
-import './convertData';
+
 
 import './modalFooter';
 
