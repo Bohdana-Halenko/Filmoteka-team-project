@@ -1,0 +1,41 @@
+.up-button {
+  padding: 0px;
+  display: none;
+  position: fixed;
+  bottom: 102px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: solid 2px $secondary-text-color;
+  cursor: pointer;
+  background-color: transparent;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    padding: 5px;
+    bottom: 90px;
+    right: 40px;
+    width: 45px;
+    height: 45px;
+  }
+
+  &:hover,
+  &:focus {
+    line-height: 0;
+    border-color: $accent-color;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    fill: $secondary-text-color;
+
+    .up-button:hover &,
+    .up-button:focus & {
+      fill: $accent-color;
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}

@@ -25,6 +25,7 @@ import API from './apiService';
 
 //Loader
 import './loader';
+import './upBtn';
 
 // import './authRegister';
 // Проверка работы API - это просто тест
