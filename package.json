@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "firebase": "^9.6.3",
     "tui-pagination": "^3.4.1"
   }
 }
