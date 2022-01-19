@@ -1,3 +1,5 @@
+// кнопка up to top page
+
 const refs = { upBtnEl: document.getElementById('up-btn') };
 export const {upBtnEl} = refs;
 
