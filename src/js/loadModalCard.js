@@ -18,7 +18,6 @@ function clickOnMovie(e) {
 
 function renderModalCard(res) {
   const markup = modalCardTpl(res);
-  
   modalCard.innerHTML = markup;
   modalCard.classList.add('is-open');
   document.body.style.overflow = 'hidden';
@@ -30,16 +29,18 @@ function renderModalCard(res) {
   closeButton.addEventListener('click', modalClose);
 
   window.addEventListener('keydown', modalCloseByEsc);
+  
 }
 
 function modalClose() {
   modalCard.classList.remove('is-open');
   document.body.style.overflow = '';
   window.removeEventListener('keydown', modalCloseByEsc);
+ 
 }
 
-function modalCloseByEsc(event) {
-  if (event.code === 'Escape') {
+function modalCloseByEsc(e) {
+  if (e.code === 'Escape') {
     modalClose();
   }
 }
