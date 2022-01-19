@@ -33,4 +33,4 @@ export function renderPaginationTrendingMovie(totalItems) {
   pagination.on('afterMove', function (eventData) {
     console.log(eventData.page);
   });
-
+}
