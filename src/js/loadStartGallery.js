@@ -4,7 +4,6 @@ import transformData from './transformData';
 import transformGenres from './transfomGenres';
 
 // номер страницы открываемы по умолчанию
-const page = 1;
 
 const galleryList = document.querySelector('.gallery-list');
 
@@ -18,17 +17,19 @@ function loadStartGallery(data) {
 }
 
 // функция получения данных с сервера и коррекция даты и жанров
-function dataRequest(page) {
-  API.getTrendingMovie(page).then(({ resultsTrending }) => {
-    // генерим дату
-    transformData(resultsTrending);
-    // генерим жанры
-    transformGenres(resultsTrending);
-    // рендерим на страницу
-    loadStartGallery(resultsTrending);
-  });
+function dataRequest() {
+  API.getTrendingMovie()
+    .then(({ resultsTrending }) => {
+      // генерим дату
+      transformData(resultsTrending);
+      // генерим жанры
+      transformGenres(resultsTrending);
+      // рендерим на страницу
+      loadStartGallery(resultsTrending);
+    })
+    .catch(error => console.error(error.message));
 }
 // вызов функции рендера галереи при загрузке страницы
-dataRequest(page);
+dataRequest();
 
 export { loadStartGallery, dataRequest };
