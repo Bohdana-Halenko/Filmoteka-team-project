@@ -13,12 +13,12 @@
   @media screen and (min-width: $tablet) {
     padding: 20px 40px 20px 40px;
     width: 618px;
-    height: 720px;
+    // height: 720px;
     flex-wrap: wrap;
   }
   @media screen and (min-width: $desktop) {
     width: 882px;
-    height: 1020px;
+    // height: 1020px;
   }
 }
 .footer-modal-group .team-name {
@@ -37,12 +37,18 @@
   }
 }
 .group {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   @media screen and (min-width: $tablet) {
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    margin: -15px;
+    margin-top: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin: -15px;
+    margin-top: 10px;
   }
   &__item {
     width: 280px;
@@ -65,7 +71,7 @@
     margin-bottom: 15px;
     @media screen and (min-width: $tablet) {
       margin-bottom: 30px;
-      margin-right: 30px;
+      // margin-right: 30px;
     }
     @media screen and (min-width: $desktop) {
       margin-bottom: 30px;
@@ -185,6 +191,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 1023px) {
+    width: 22px;
+    height: 22px;
+  }
 
   &:hover,
   &:focus {

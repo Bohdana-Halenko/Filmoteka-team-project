@@ -1,14 +1,15 @@
 {{#each this }}
 <li class="gallery-card" id="{{id}}">
     {{#if poster_path}} <img class="card-img" src='https://image.tmdb.org/t/p/w500{{poster_path}}' loading="lazy"
-        alt='Film {{title}} poster' data-id="{{id}}"/>
+        alt='Film {{title}} poster' data-id="{{id}}" />
     {{else}}
-    <img class="card-img" src='../images/no-poster.png' loading="lazy" alt='Film {{title}} poster' data-id="{{id}}"/>
+    <img class="card-img" src='../images/no-poster.png' loading="lazy" alt='Film {{title}} poster' data-id="{{id}}" />
     {{/if}}
 
     <div class="card-info">
         <h2 class="card-title" data-id="{{id}}"> {{title}} </h2>
-        <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>
+        <p class="card-genre">
+            {{#if genres}}{{genres}}{{/if}} </p>
         {{#if release_date}}
         <p class="card-release-year"> {{release_date}} </p>
         {{/if}}
