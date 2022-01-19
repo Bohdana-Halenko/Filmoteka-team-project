@@ -20,6 +20,8 @@ import './convertData';
 
 import './modalFooter';
 
+import './renderOnClickLogo';
+
 import API from './apiService';
 
 //Loader
