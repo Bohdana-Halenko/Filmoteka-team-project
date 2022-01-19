@@ -30,7 +30,7 @@ export function renderPaginationTrendingMovie(totalItems) {
 
   const pagination = new Pagination(container, options);
 
-  pagination.on('afterMove', function (eventData) {
+  pagination.on("afterMove", function (eventData) {
     console.log(eventData.page);
-  });
-
+  })
+};
