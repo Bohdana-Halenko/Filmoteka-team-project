@@ -20,8 +20,8 @@ function loadStartGallery(data) {
 }
 
 // функция получения данных с сервера и коррекция даты и жанров
-function dataRequest(startPage) {
-    API.getTrendingMovie(startPage)
+function dataRequest(page) {
+    API.getTrendingMovie(page)
     .then(({ page, totalItems, resultsTrending }) => {
     // генерим дату
     transformData(resultsTrending);
