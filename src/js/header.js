@@ -1,3 +1,5 @@
+import dataRequest from './loadStartGallery';
+
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
 const signIn = document.querySelector('.sign-in__button')
@@ -15,7 +17,7 @@ buttonQueue.addEventListener('click', addQueueBtnAccent);
 signIn.addEventListener('click', openSignInForm)
 
 function changeClassToHome(e) {
-  e.preventDefault();
+  e.preventDefault();  
   navElemHome.classList.add('nav-list__item-home-active');
   navElemLibrary.classList.remove('nav-list__item-library-active');
 
@@ -24,6 +26,7 @@ function changeClassToHome(e) {
   libraryButtons.classList.add('is-hidden');
 
   headerContainer.classList.remove('header__container-library');
+  dataRequest();
 }
 function changeClassToLibrary(e) {
   e.preventDefault();
