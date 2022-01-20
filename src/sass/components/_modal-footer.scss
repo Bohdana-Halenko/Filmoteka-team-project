@@ -181,7 +181,7 @@
 
 .close-btn {
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: 20px;
   height: 28px;
   width: 28px;
@@ -193,8 +193,8 @@
   cursor: pointer;
 
   @media screen and (max-width: 1023px) {
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
   }
 
   &:hover,
