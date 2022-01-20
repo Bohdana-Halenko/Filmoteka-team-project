@@ -33,11 +33,12 @@ export const initPagination = ({ page, totalItems }) => {
 
   const pagination = new Pagination(container, options);
 
-  pagination.on('afterMove', ({ page }) => {
+  pagination.on('afterMove', (event) => {
+    const currentPage = event.page;
     // Page-event
-    // console.log(page);
+    console.log(currentPage);
     // Здесь нужно будет и для поиска написать и что-то придумать со скроллом
-    dataRequest(page);
+    dataRequest(currentPage);
     backToTop();
   })
   return pagination;

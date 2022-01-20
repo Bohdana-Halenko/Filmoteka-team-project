@@ -112,6 +112,12 @@
   object-fit: contain;
 }
 
+.film__noposter {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .film__title {
   font-weight: 500;
   font-size: 20px;
