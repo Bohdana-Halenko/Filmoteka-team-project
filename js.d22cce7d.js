@@ -96,12 +96,12 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{"../templates/modal-card.hbs":"LkF4","./apiService":"eQwa"}],"amkG":[function(require,module,exports) {
 (()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("hidden"),document.body.classList.toggle("modal-open")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)})();
 },{}],"GaAn":[function(require,module,exports) {
-"use strict";var e=require("./loadStartGallery"),t=require("./header");const a=document.querySelector(".nav-list__item-home"),r=document.querySelector(".logo__link");function i(r){r.preventDefault(),"nav-list__item-home-active"!==a.classList&&(0,t.changeClassToHome)(),(0,e.dataRequest)()}r.addEventListener("click",i,!1);
-},{"./loadStartGallery":"R7mJ","./header":"cGsR"}],"vQE2":[function(require,module,exports) {
+"use strict";var e=require("./loadStartGallery");const t=document.querySelector(".nav-list__item-home"),r=document.querySelector(".nav-list__item-library"),i=document.querySelector(".search"),a=document.querySelector(".library__btns"),c=document.querySelector(".header__container"),s=document.querySelector(".logo__link");function l(t){t.preventDefault(),n(),(0,e.dataRequest)(1)}function n(){t.classList.add("nav-list__item-home-active"),r.classList.remove("nav-list__item-library-active"),i.classList.remove("is-hidden"),a.classList.add("is-hidden"),c.classList.remove("header__container-library")}s.addEventListener("click",l);
+},{"./loadStartGallery":"R7mJ"}],"vQE2":[function(require,module,exports) {
 window.onload=function(){document.getElementById("loader").style.display="none"};
 },{}],"NYxa":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.upBtnEl=void 0;const e={upBtnEl:document.getElementById("up-btn")},{upBtnEl:t}=e;function n(){t.style.display=document.documentElement.scrollTop>300?"block":"none"}exports.upBtnEl=t,window.onscroll=n,t.addEventListener("click",()=>{document.documentElement.scrollTop=0});
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss");var r=i(require("axios"));require("./header"),require("./modalSignIn"),require("./registration"),require("./loadStartGallery"),require("./loadModalCard"),require("./modalFooter"),require("./renderOnClickLogo");var e=i(require("./apiService"));function i(r){return r&&r.__esModule?r:{default:r}}require("./loader"),require("./upBtn");
 },{"../sass/main.scss":"clu1","axios":"dZBD","./header":"cGsR","./modalSignIn":"WH0L","./registration":"vz0I","./loadStartGallery":"R7mJ","./loadModalCard":"CKAo","./modalFooter":"amkG","./renderOnClickLogo":"GaAn","./apiService":"eQwa","./loader":"vQE2","./upBtn":"NYxa"}]},{},["QvaY"], null)
-//# sourceMappingURL=/Filmoteka-team-project/js.24fb0da0.js.map
+//# sourceMappingURL=/Filmoteka-team-project/js.d22cce7d.js.map
