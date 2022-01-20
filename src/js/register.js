@@ -13,7 +13,7 @@ const createAccount = async () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  } else console.log('Error');
 };
 
 refs.registerbtn.addEventListener('click', createAccount);
