@@ -1,0 +1,95 @@
+.registration-form__wraper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 450px;
+  margin: 0 auto;
+  border: 1px solid $accent-color;
+  border-radius: 5px;
+  background-color: $footer-background-color;
+}
+.registration-form {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 280px;
+  height: 400px;
+  margin: 0 auto;
+  color: $primary-text-color;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.17;
+}
+.registration-form-close-btn {
+  position: relative;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    transition-duration: 0.5s;
+    fill: $primary-background-color;
+  }
+}
+.registration-form-btn-svj {
+  position: relative;
+  right: 3px;
+}
+
+.registration-form__input {
+  width: 280px;
+  height: 30px;
+  outline: transparent;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.registration-form__btn-registration {
+  border: 1px solid $primary-text-color;
+  border-radius: 3px;
+  width: 150px;
+  margin: 0px auto 20px auto;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    transition-duration: 0.5s;
+    color: $primary-background-color;
+  }
+}
+.registration-form__offer-registration {
+  margin: 0 auto;
+  font-size: 16px;
+  height: 40px;
+}
+.registration-form__btn {
+  border: 1px solid $primary-text-color;
+  border-radius: 3px;
+  width: 170px;
+  height: 30px;
+  margin: 0 auto;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    transition-duration: 0.5s;
+    color: $primary-background-color;
+  }
+}
+@media screen and (min-width: 768px) {
+  .registration-form__wraper {
+    width: 400px;
+  }
+}

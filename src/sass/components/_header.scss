@@ -94,6 +94,9 @@
     background-color: $accent-color;
   }
 }
+.sign-in__button {
+  cursor: pointer;
+}
 .search {
   display: flex;
   align-items: flex-end;
@@ -274,4 +277,11 @@
       background-image: url('../images/header/header-library-desktop-2x.jpg');
     }
   }
+}
+
+.sign-in__button {
+  background-color: $transparent;
+  border: none;
+  color: $lighter-text-color;
+  padding: 0;
 }

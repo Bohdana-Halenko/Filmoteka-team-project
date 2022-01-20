@@ -2,7 +2,10 @@ import '../sass/main.scss';
 
 import axios from 'axios';
 
+
 import './header';
+import './modalSignIn';
+import './registration';
 import './loadStartGallery';
 
 // Pagination

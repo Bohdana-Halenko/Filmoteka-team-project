@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header__container">
+  <div class="header__container header__container-non-active">
     <nav class="nav">
       <div class="logo__container">
         <a href="./index.html" class="logo logo__link">
@@ -22,9 +22,13 @@
             >
           </li>
           <li class="nav-list__item-sign-in">
-            <a href="" class="nav-list__link-sign-in nav-list__link-sign-in--accent link"
-              >SIGN IN</a
+            <button
+              type="button"
+              class="sign-in__button nav-list__link-sign-in nav-list__link-sign-in--accent"
+              data-modal-open-sign-in
             >
+              SIGN IN
+            </button>
           </li>
         </ul>
       </div>

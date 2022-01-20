@@ -1,5 +1,7 @@
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
+const signIn = document.querySelector('.sign-in__button')
+const formWindow = document.querySelector('.login-form__window')
 const searchForm = document.querySelector('.search');
 const libraryButtons = document.querySelector('.library__btns');
 const headerContainer = document.querySelector('.header__container');
@@ -10,8 +12,10 @@ navElemLibrary.addEventListener('click', changeClassToLibrary);
 navElemHome.addEventListener('click', changeClassToHome);
 buttonWatched.addEventListener('click', addWatchedBtnAccent);
 buttonQueue.addEventListener('click', addQueueBtnAccent);
+signIn.addEventListener('click', openSignInForm)
 
-function changeClassToHome() {
+function changeClassToHome(e) {
+  e.preventDefault();
   navElemHome.classList.add('nav-list__item-home-active');
   navElemLibrary.classList.remove('nav-list__item-library-active');
 
@@ -29,7 +33,7 @@ function changeClassToLibrary(e) {
   searchForm.classList.remove('search');
   libraryButtons.classList.remove('is-hidden');
 
-  headerContainer.classList.remove('header__container');
+  headerContainer.classList.remove('header__container-non-active');
   headerContainer.classList.add('header__container-library');
 }
 function addWatchedBtnAccent() {
@@ -42,4 +46,8 @@ function addQueueBtnAccent() {
   buttonQueue.classList.add('library__btn-active');
 }
 
-export { changeClassToHome, changeClassToLibrary, addWatchedBtnAccent, addQueueBtnAccent };
+  
+function openSignInForm(){
+  formWindow.classList.toggle('is-hidden')
+}
+export { changeClassToHome, changeClassToLibrary, addWatchedBtnAccent, addQueueBtnAccent, openSignInForm };
