@@ -1,24 +1,31 @@
-// import gallery from '../templates/gallery.hbs';
-// import API from './apiService';
-// import transformData from './transformData';
-// import transformGenres from './transfomGenres';
-
 import { dataRequest } from './loadStartGallery';
-import { changeClassToHome } from './header';
 
 const navElemHome = document.querySelector('.nav-list__item-home');
+const navElemLibrary = document.querySelector('.nav-list__item-library');
+const searchForm = document.querySelector('.search');
+const libraryButtons = document.querySelector('.library__btns');
+const headerContainer = document.querySelector('.header__container');
 
 // нашли лого
 const homeLogo = document.querySelector('.logo__link');
 
 // слушаем нажатие на logo
-homeLogo.addEventListener('click', renderClickLogo, false);
+homeLogo.addEventListener('click', renderClickLogo);
 
 // функция рендера галереи без перезагрузки страницы
 function renderClickLogo(evt) {
   evt.preventDefault();
-  if (navElemHome.classList !== 'nav-list__item-home-active') {
-    changeClassToHome();
-  }
-  dataRequest();
+  changeClassToHome();
+  dataRequest(1);
+}
+
+// функция рендера хедера
+function changeClassToHome() {
+  navElemHome.classList.add('nav-list__item-home-active');
+  navElemLibrary.classList.remove('nav-list__item-library-active');
+
+  searchForm.classList.remove('is-hidden');
+  libraryButtons.classList.add('is-hidden');
+
+  headerContainer.classList.remove('header__container-library');
 }

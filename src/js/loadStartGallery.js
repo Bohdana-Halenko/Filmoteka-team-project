@@ -21,20 +21,19 @@ function loadStartGallery(data) {
 
 // функция получения данных с сервера и коррекция даты и жанров
 function dataRequest(page) {
-    API.getTrendingMovie(page)
-    .then(({ page, totalItems, resultsTrending }) => {
+  API.getTrendingMovie(page).then(({ page, totalItems, resultsTrending }) => {
     // генерим дату
     transformData(resultsTrending);
     // генерим жанры
     transformGenres(resultsTrending);
     // рендерим на страницу
     loadStartGallery(resultsTrending);
-    
+
     initPagination({
       page,
       totalItems,
     });
-  })
+  });
 }
 
 // вызов функции рендера галереи при загрузке страницы
