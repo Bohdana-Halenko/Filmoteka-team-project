@@ -38,6 +38,7 @@ function dataRequest(startPage) {
 }
 
 // вызов функции рендера галереи при загрузке страницы
+
 dataRequest(startPage);
 
 export { loadStartGallery, dataRequest };

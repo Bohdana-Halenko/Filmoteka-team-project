@@ -4,6 +4,9 @@
 // import transformGenres from './transfomGenres';
 
 import { dataRequest } from './loadStartGallery';
+import { changeClassToHome } from './header';
+
+const navElemHome = document.querySelector('.nav-list__item-home');
 
 // нашли лого
 const homeLogo = document.querySelector('.logo__link');
@@ -14,5 +17,8 @@ homeLogo.addEventListener('click', renderClickLogo, false);
 // функция рендера галереи без перезагрузки страницы
 function renderClickLogo(evt) {
   evt.preventDefault();
-  dataRequest(1);
+  if (navElemHome.classList !== 'nav-list__item-home-active') {
+    changeClassToHome();
+  }
+  dataRequest();
 }
