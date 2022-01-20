@@ -96,6 +96,10 @@
 }
 .sign-in__button {
   cursor: pointer;
+  background-color: $transparent;
+  border: none;
+  color: $lighter-text-color;
+  padding: 0;
 }
 .search {
   display: flex;
@@ -127,6 +131,7 @@
     width: 20px;
   }
 }
+
 ::-webkit-input-placeholder {
   color: $lighter-text-color;
 }
@@ -244,7 +249,6 @@
     }
   }
 }
-
 @media screen and (min-width: 1024px) {
   .header__container {
     background-image: url('../images/header/header-main-desktop-1x.jpg');
@@ -277,11 +281,4 @@
       background-image: url('../images/header/header-library-desktop-2x.jpg');
     }
   }
-}
-
-.sign-in__button {
-  background-color: $transparent;
-  border: none;
-  color: $lighter-text-color;
-  padding: 0;
 }

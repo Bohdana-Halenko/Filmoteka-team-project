@@ -18,7 +18,7 @@
   justify-content: space-around;
   flex-direction: column;
   width: 280px;
-  height: 400px;
+  height: 380px;
   margin: 0 auto;
   color: $primary-text-color;
   font-family: $primary-font-family;
@@ -57,7 +57,7 @@
 .login-form__btn-login {
   border: 1px solid $primary-text-color;
   border-radius: 3px;
-  width: 150px;
+  width: 280px;
   margin: 0 auto;
   cursor: pointer;
   &:hover,
@@ -78,7 +78,7 @@
   justify-content: center;
   border: 1px solid $primary-text-color;
   border-radius: 3px;
-  width: 150px;
+  width: 280px;
   margin: 0 auto;
   font-size: 14px;
   cursor: pointer;

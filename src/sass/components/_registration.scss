@@ -18,7 +18,7 @@
   justify-content: space-around;
   flex-direction: column;
   width: 280px;
-  height: 400px;
+  height: 380px;
   margin: 0 auto;
   color: $primary-text-color;
   font-family: $primary-font-family;
@@ -58,7 +58,7 @@
 .registration-form__btn-registration {
   border: 1px solid $primary-text-color;
   border-radius: 3px;
-  width: 150px;
+  width: 280px;
   margin: 0px auto 20px auto;
   cursor: pointer;
   &:hover,
@@ -76,7 +76,7 @@
 .registration-form__btn {
   border: 1px solid $primary-text-color;
   border-radius: 3px;
-  width: 170px;
+  width: 280px;
   height: 30px;
   margin: 0 auto;
   font-size: 16px;

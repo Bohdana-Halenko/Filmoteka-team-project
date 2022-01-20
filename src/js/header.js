@@ -20,6 +20,7 @@ function changeClassToHome(e) {
   navElemLibrary.classList.remove('nav-list__item-library-active');
 
   searchForm.classList.remove('is-hidden');
+  searchForm.classList.add('search');
   libraryButtons.classList.add('is-hidden');
 
   headerContainer.classList.remove('header__container-library');
