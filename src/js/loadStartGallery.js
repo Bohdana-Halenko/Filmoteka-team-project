@@ -2,10 +2,12 @@ import gallery from '../templates/gallery.hbs';
 import API from './apiService';
 import transformData from './transformData';
 import transformGenres from './transfomGenres';
+import { initPagination } from './pagination';
 
-// номер страницы открываемы по умолчанию
-const page = 1;
+// номер страницы открываемый по умолчанию
+let startPage = 1;
 
+// контейнер галлереи
 const galleryList = document.querySelector('.gallery-list');
 
 // функция рендера
@@ -18,17 +20,24 @@ function loadStartGallery(data) {
 }
 
 // функция получения данных с сервера и коррекция даты и жанров
-function dataRequest(page) {
-  API.getTrendingMovie(page).then(({ resultsTrending }) => {
+function dataRequest(startPage) {
+    API.getTrendingMovie(startPage)
+    .then(({ page, totalItems, resultsTrending }) => {
     // генерим дату
     transformData(resultsTrending);
     // генерим жанры
     transformGenres(resultsTrending);
     // рендерим на страницу
     loadStartGallery(resultsTrending);
-  });
+    
+    initPagination({
+      page,
+      totalItems,
+    });
+  })
 }
+
 // вызов функции рендера галереи при загрузке страницы
-dataRequest(page);
+dataRequest(startPage);
 
 export { loadStartGallery, dataRequest };

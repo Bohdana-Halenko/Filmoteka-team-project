@@ -1,12 +1,15 @@
 import Pagination from 'tui-pagination';
+import { dataRequest } from './loadStartGallery';
 
-export function renderPaginationTrendingMovie(totalItems) {
-  const container = document.getElementById('tui-pagination-container');
+const container = document.getElementById('tui-pagination-container');
+
+export const initPagination = ({ page, totalItems }) => {
+  
   const options = {
+    page,
     totalItems,
-    itemsPerPage: 20,
+    itemsPerPage:20,
     visiblePages: 5,
-    page: 1,
     centerAling: false,
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
@@ -26,11 +29,25 @@ export function renderPaginationTrendingMovie(totalItems) {
         '<span class="tui-ico-ellip">...</span>' +
         '</a>',
     },
-  };
+  }
 
   const pagination = new Pagination(container, options);
 
-  pagination.on('afterMove', function (eventData) {
-    console.log(eventData.page);
-  });
+  pagination.on('afterMove', ({ page }) => {
+    // Page-event
+    // console.log(page);
+    // Здесь нужно будет и для поиска написать и что-то придумать со скроллом
+    dataRequest(page);
+    backToTop();
+  })
+  return pagination;
+};
+
+// Возврат в начало галлереи
+function backToTop() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -30);
+    setTimeout(backToTop, 0);
+  }
 }
+  
