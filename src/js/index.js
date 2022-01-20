@@ -2,7 +2,6 @@ import '../sass/main.scss';
 
 import axios from 'axios';
 
-
 import './header';
 import './modalSignIn';
 import './registration';
@@ -30,7 +29,10 @@ import API from './apiService';
 import './loader';
 import './upBtn';
 
-// import './authRegister';
+//FireBase
+// import './fireBaseInit';
+// import './auth';
+// import './register';
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));
 // API.getMovieBySearch('comedy').then(res => console.log('Search res', res));
