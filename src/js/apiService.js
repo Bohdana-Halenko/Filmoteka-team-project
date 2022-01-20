@@ -5,43 +5,33 @@ const API_KEY = `6a7bc4e26417129845bc117e7a600f1d`;
 
 // Получение трендовых фильмов - главная страница
 
-export const getTrendingMovie = () => {
-    return axios
-        .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
-        .then((response) => ({
-            totalTrending: response.data.total_results,
-            resultsTrending: response.data.results,
-        }))
+async function getTrendingMovie(page) {
+    return await axios
+        .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`)
+        .then((response) => {
+            // console.log('Trending response', response.data);
+            return {
+                page: page,
+                totalItems: response.data.total_results,
+                resultsTrending: response.data.results
+            }
+        })
             .catch((error) => {
                 console.error("Something wrong with TrendingMovie fetch", error.message)
             })
         }
 
-// async function getTrendingMovie() {
-//     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
-//     return await axios
-//         .get(url)
-//         .then((response) => {
-//             // console.log('Trending response', response.data);
-//             return {
-//                 totalTrending: response.data.total_results,
-//                 resultsTrending: response.data.results
-//             }
-//         })
-//         .catch((error) => {console.error("Something wrong with TrendingMovie fetch", error.message) 
-//     })
-//   }
-
 // Получение фильмов по поиску
 
-async function getMovieBySearch(searchQuery) {
-    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchQuery}`;
+async function getMovieBySearch(searchQuery, page) {
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=${page}`;
     return await axios
         .get(url)
         .then((response) => {
             // console.log('Search response', response.data);
-           return {
-                totalSearch: response.data.total_results,
+            return {
+                page: page,
+                totalItems: response.data.total_results,
                 resultsSearch: response.data.results
             }
         })
@@ -49,7 +39,7 @@ async function getMovieBySearch(searchQuery) {
     })
   }
 
-// Получение детальной информации о фильме - в модалку
+// Получение детальной информации о фильме - в модальное окно
 
 async function getMovieDetails(movieId) {
     const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
@@ -64,7 +54,7 @@ async function getMovieDetails(movieId) {
     })
 }
 
-// Получение жанров
+// Получение списка жанров
 
 async function getGenres() {
     const url = `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`;
@@ -78,6 +68,5 @@ async function getGenres() {
         
     })
 }
-
 
 export default { getTrendingMovie, getMovieBySearch, getMovieDetails, getGenres}
