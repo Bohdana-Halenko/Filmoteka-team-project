@@ -1,0 +1,41 @@
+<div class="login-form__window backdrop is-hidden">
+  <div class="login-form__wraper">
+    <button type="button" class="login-form-close-btn">
+      <svg class="login-form-btn-svj" width="14" height="14">
+        <use href="/images/icons/icons2.svg#close"></use>
+      </svg>
+    </button>
+    <form class="login-form">
+      <div>
+        <label class="login-form__label"> Login </label>
+        <input
+          class="login-form__input"
+          type="text"
+          name="login"
+          minlength="3"
+          maxlength="20"
+          placeholder="Введите свой логин здесь"
+          required
+        />
+      </div>
+      <div>
+        <label class="login-form__label"> Password </label>
+        <input
+          class="login-form__input"
+          type="text"
+          name="password"
+          minlength="3"
+          maxlength="20"
+          placeholder="Введите свой пароль"
+          required
+        />
+      </div>
+      <button type="submit" class="login-form__btn-login">Login</button>
+      <div>
+        <p class="login-form__offer-registration">Если вы ещё не зарегистрировались,</p>
+        <p class="login-form__offer-registration">то вам сюда</p>
+        <button type="button" class="login-form__btn-to-registartion">Регистрация</button>
+      </div>
+    </form>
+  </div>
+</div>
