@@ -104,4 +104,4 @@ window.onload=function(){document.getElementById("loader").style.display="none"}
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss");var r=i(require("axios"));require("./header"),require("./modalSignIn"),require("./registration"),require("./loadStartGallery"),require("./loadModalCard"),require("./modalFooter"),require("./renderOnClickLogo");var e=i(require("./apiService"));function i(r){return r&&r.__esModule?r:{default:r}}require("./loader"),require("./upBtn");
 },{"../sass/main.scss":"clu1","axios":"dZBD","./header":"cGsR","./modalSignIn":"WH0L","./registration":"vz0I","./loadStartGallery":"R7mJ","./loadModalCard":"CKAo","./modalFooter":"amkG","./renderOnClickLogo":"GaAn","./apiService":"eQwa","./loader":"vQE2","./upBtn":"NYxa"}]},{},["QvaY"], null)
-//# sourceMappingURL=/Filmoteka-team-project/js.14b324f9.js.map
+//# sourceMappingURL=/Filmoteka-team-project/js.3a5315e2.js.map
