@@ -18,6 +18,6 @@ export const refs = {
   email: document.querySelector('.email__input'),
   password: document.querySelector('.password__input'),
   repeatPassword: document.querySelector('.repeat-password'),
-  loginbtn: document.querySelector('.login__btn'),
-  registerbtn: document.querySelector('.register__btn'),
+  loginbtn: document.querySelector('.login-form__btn-login'),
+  registerbtn: document.querySelector('.registration-form__btn'),
 };
