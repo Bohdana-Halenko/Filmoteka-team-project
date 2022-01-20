@@ -20,72 +20,70 @@
   width: 280px;
   height: 380px;
   margin: 0 auto;
-  color: $primary-text-color;
+  color: $secondary-text-color;
   font-family: $primary-font-family;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.17;
 }
 .registration-form-close-btn {
-  position: relative;
-  border-radius: 50px;
-  width: 24px;
-  height: 24px;
-  right: 10px;
-  top: 10px;
-  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   cursor: pointer;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $transparent;
+  color: $primary-text-color;
   &:hover,
   &:focus {
     background-color: $accent-color;
-    transition-duration: 0.5s;
-    fill: $primary-background-color;
+    border: 1px solid $accent-color;
+    color: $lighter-text-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
-.registration-form-btn-svj {
-  position: relative;
-  right: 3px;
-}
-
 .registration-form__input {
   width: 280px;
   height: 30px;
   outline: transparent;
   border: 1px solid $accent-color;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.registration-form__btn-registration {
-  border: 1px solid $primary-text-color;
   border-radius: 3px;
-  width: 280px;
-  margin: 0px auto 20px auto;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    background-color: $accent-color;
-    transition-duration: 0.5s;
-    color: $primary-background-color;
-  }
 }
+
 .registration-form__offer-registration {
   margin: 0 auto;
   font-size: 16px;
   height: 40px;
 }
 .registration-form__btn {
-  border: 1px solid $primary-text-color;
+  display: flex;
+  justify-content: center;
+  border: 2px solid $transparent;
   border-radius: 3px;
-  width: 280px;
-  height: 30px;
+  width: 180px;
   margin: 0 auto;
+  color: $lighter-text-color;
+  background-color: $accent-color;
   font-size: 16px;
+  line-height: 1.57;
   cursor: pointer;
+  height: 30px;
+  opacity: 90%;
+  transition: all 250ms linear;
   &:hover,
   &:focus {
     background-color: $accent-color;
-    transition-duration: 0.5s;
     color: $primary-background-color;
+    opacity: 100%;
+    border: 2px solid $secondary-text-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
 @media screen and (min-width: 768px) {
