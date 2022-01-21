@@ -40,4 +40,4 @@ function dataRequest(page) {
 
 dataRequest(startPage);
 
-export { loadStartGallery, dataRequest };
+export { galleryList, loadStartGallery, dataRequest };
