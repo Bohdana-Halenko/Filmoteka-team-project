@@ -1,4 +1,4 @@
-import dataRequest from './loadStartGallery';
+import { dataRequest } from './loadStartGallery';
 
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
@@ -26,7 +26,7 @@ function changeClassToHome(e) {
   libraryButtons.classList.add('is-hidden');
 
   headerContainer.classList.remove('header__container-library');
-  dataRequest();
+  dataRequest(1);
 }
 function changeClassToLibrary(e) {
   e.preventDefault();
