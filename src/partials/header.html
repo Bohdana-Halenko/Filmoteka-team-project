@@ -38,18 +38,20 @@
         <input
           class="search__input"
           type="text"
-          name="film-name"
-          pattern="[a-z]"
+          name="filmName"
           minlength="3"
           maxlength="20"
           placeholder="Поиск фильмов"
           required
         />
-        <svg class="search__img">
-          <use href="/images/icons/sprite.svg#icon-search"></use>
-        </svg>
-        <button class="search__btn" type="button"></button>
+
+        <button class="search__btn" type="submit">
+          <svg class="search__img">
+            <use href="/images/icons/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
       </form>
+      <p class="notification is-hidden"></p>
     </div>
     <div class="library__btns is-hidden">
       <button class="library__btn-watched library__btn-active">WATCHED</button>

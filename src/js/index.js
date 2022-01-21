@@ -6,6 +6,7 @@ import './header';
 import './modalSignIn';
 import './registration';
 import './loadStartGallery';
+import './searchFilms';
 
 // // Pagination
 // import { getTrendingMovie, getMovieBySearch, getMovieDetails, getGenres } from './apiService';
