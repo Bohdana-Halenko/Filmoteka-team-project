@@ -30,9 +30,9 @@ import './loader';
 import './upBtn';
 
 //FireBase
-// import './fireBaseInit';
-// import './auth';
-// import './register';
+import './fireBaseInit';
+import './auth';
+import './register';
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));
 // API.getMovieBySearch('comedy').then(res => console.log('Search res', res));

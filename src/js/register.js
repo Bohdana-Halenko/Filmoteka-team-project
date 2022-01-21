@@ -1,5 +1,13 @@
-import createUserWithEmailAndPassword from 'firebase/auth';
-import { auth, refs } from './fireBaseInit';
+import { getAuth, createUserWithEmailAndPassword, connectAuthEmulator } from 'firebase/auth';
+
+const auth = getAuth();
+connectAuthEmulator(auth, 'http://localhost:9099');
+const refs = {
+  email: document.querySelector('.registration-form__input-email'),
+  password: document.querySelector('.registration-form__input-passw'),
+  repeatPassword: document.querySelector('.registration-form__input-repeat-passw'),
+  registerbtn: document.querySelector('.registration-form__btn'),
+};
 
 const createAccount = async () => {
   event.preventDefault();
