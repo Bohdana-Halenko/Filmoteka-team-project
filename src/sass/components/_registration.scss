@@ -8,7 +8,6 @@
   width: 320px;
   height: 450px;
   margin: 0 auto;
-  border: 1px solid $accent-color;
   border-radius: 5px;
   background-color: $footer-background-color;
 }
@@ -76,7 +75,6 @@
   cursor: pointer;
   height: 30px;
   opacity: 90%;
-  transition: all 250ms linear;
   &:hover,
   &:focus {
     background-color: $accent-color;
