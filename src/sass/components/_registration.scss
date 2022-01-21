@@ -5,22 +5,21 @@
   transform: translate(-50%, -50%) scale(1);
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 300px;
   height: 450px;
   margin: 0 auto;
-
   border-radius: 3px;
-
   background-color: $footer-background-color;
 }
 .registration-form {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: column;
   width: 280px;
   height: 380px;
   margin: 0 auto;
+  padding-top: 20px;
   color: $secondary-text-color;
   font-family: $primary-font-family;
   font-weight: 400;
@@ -41,6 +40,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: $transparent;
   color: $primary-text-color;
+  z-index: 1000;
   &:hover,
   &:focus {
     background-color: $accent-color;
@@ -76,12 +76,10 @@
   line-height: 1.57;
   cursor: pointer;
   height: 30px;
-  opacity: 90%;
   &:hover,
   &:focus {
     background-color: $accent-color;
     color: $primary-background-color;
-    opacity: 100%;
     border: 2px solid $secondary-text-color;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
