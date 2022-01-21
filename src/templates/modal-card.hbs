@@ -18,7 +18,7 @@
             <img class="film__noposter" src="https://images.unsplash.com/photo-1634157703702-3c124b455499?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
                 alt="{{data.title}}">
             {{/unless}}
-
+             
         </div>
 
         <div class="film__decription">
@@ -52,15 +52,29 @@
             <h2 class="film__about">About</h2>
             <span class="film__overview">{{data.overview}}</span>
 
-            <button type="button" class=" film__button btn__trailer">Watch trailer</button>
+            <button type="button" class=" film__button btn__trailer">
+                <svg width='40' height='40'class='youtube-icon' viewBox='0 -77 512.00213 512' >
+                    <path d='m501.453125 56.09375c-5.902344-21.933594-23.195313-39.222656-45.125-45.128906-40.066406-10.964844-200.332031-10.964844-200.332031-10.964844s-160.261719 0-200.328125 10.546875c-21.507813 5.902344-39.222657 23.617187-45.125 45.546875-10.542969 40.0625-10.542969 123.148438-10.542969 123.148438s0 83.503906 10.542969 123.148437c5.90625 21.929687 23.195312 39.222656 45.128906 45.128906 40.484375 10.964844 200.328125 10.964844 200.328125 10.964844s160.261719 0 200.328125-10.546875c21.933594-5.902344 39.222656-23.195312 45.128906-45.125 10.542969-40.066406 10.542969-123.148438 10.542969-123.148438s.421875-83.507812-10.546875-123.570312zm0 0'
+                    fill='#f00'></path>
+                    <path d='m204.96875 256 133.269531-76.757812-133.269531-76.757813zm0 0' fill='#fff'></path>
+                </svg>
+            Watch trailer
+            </button>
 
             <div class="modal__buttons">
-                
-                <button type="button" class=" film__button btn__watch">Add to watched</button>
-                <button type="button" class=" film__button btn__queue">Add to queue</button>
+                <button type="button" class="film__button btn__watch">Add to watched</button>
+                <button type="button" class="film__button btn__queue">Add to queue</button>
             </div>
 
         <div>    
     </div>
 </div>
 
+<div class="youTube-modal is-hidden backdrop">
+        {{!-- <button type="button" class="youTube-close-btn">
+            <svg class="modal-close-icon">
+                <use href="./images/sprite.svg#icon-close-modal-button"></use>
+            </svg>
+        </button> --}}
+        <div class="youTube-video-container"></div>
+</div>

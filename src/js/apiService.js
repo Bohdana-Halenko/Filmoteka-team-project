@@ -69,4 +69,19 @@ async function getGenres() {
     })
 }
 
-export default { getTrendingMovie, getMovieBySearch, getMovieDetails, getGenres}
+// Получение key трейлера
+
+async function getTrailerKey(movieId) {
+    const url = `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`;
+    return await axios
+        .get(url)
+        .then((response) => {
+            console.log('Video response', response.data);
+            return response.data.results[0].key
+        })
+        .catch((error) => {console.error("Something wrong with getTrailerUrl fetch", error.message)
+        
+    })
+}
+
+export default { getTrendingMovie, getMovieBySearch, getMovieDetails, getGenres, getTrailerKey}
