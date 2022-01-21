@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAvGGWNgwW7Fl_aMsfD8XyDwmTWyVohyhM',
@@ -12,12 +11,3 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
-
-export const refs = {
-  email: document.querySelector('.email__input'),
-  password: document.querySelector('.password__input'),
-  repeatPassword: document.querySelector('.repeat-password'),
-  loginbtn: document.querySelector('.login-form__btn-login'),
-  registerbtn: document.querySelector('.registration-form__btn'),
-};
