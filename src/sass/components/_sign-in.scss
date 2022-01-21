@@ -8,8 +8,7 @@
   width: 320px;
   height: 450px;
   margin: 0 auto;
-  border: 1px solid $accent-color;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: $footer-background-color;
 }
 .login-form {
@@ -65,7 +64,6 @@
   background-color: $accent-color;
   cursor: pointer;
   height: 30px;
-  transition: all 250ms linear;
   opacity: 80%;
   &:hover,
   &:focus {
@@ -96,7 +94,6 @@
   cursor: pointer;
   height: 30px;
   opacity: 90%;
-  transition: all 250ms linear;
   &:hover,
   &:focus {
     background-color: $accent-color;
