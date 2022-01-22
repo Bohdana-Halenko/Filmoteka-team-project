@@ -1,5 +1,5 @@
 import api from "./apiService";
-import { loadStartGallery, galleryList } from '../js/loadStartGallery';
+import { transformData,transformGenres,loadStartGallery, } from '../js/loadStartGallery';
 
 let name = '';
 let timeoutId = null;
@@ -42,7 +42,8 @@ function onSubmit(e) {
       showNotification(notificationEl, 'Search result not successful')
       return
 }
-    console.log(moviesData)
+    transformData(moviesData);
+    transformGenres(moviesData);
     loadStartGallery(moviesData);
   } )
 }
