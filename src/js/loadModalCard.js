@@ -1,11 +1,11 @@
 import modalCardTpl from '../templates/modal-card.hbs';
-import API from './apiService'
+import API from './apiService';
+import * as basicLightbox from 'basiclightbox';
+import 'basicLightbox/dist/basicLightbox.min.css';
+
 // =========================================================
 const galleryList = document.querySelector('.gallery-list');
 const modalCard = document.querySelector('.modal-card');
-// const trailerBackdrop = document.querySelector('.trailer__backdrop');
-// const trailerModal = document.querySelector('.trailer__modal');
-// const trailerContainer = document.querySelector('.trailer__container');
 // ==========================================================
 
 galleryList.addEventListener('click', clickOnMovie);
@@ -16,11 +16,16 @@ function clickOnMovie(e) {
     }
   let movieId = e.target.dataset.id;
   
-  API.getMovieDetails(movieId).then((res) => renderModalCard(res));
-  // API.getTrailerKey(movieId).then((key) => {
-  //   trailerContainer.setAttribute(data-key, key)
-  // });
-  
+  API.getMovieDetails(movieId)
+    .then((res) => {
+      renderModalCard(res);
+    })
+    
+  API.getTrailerKey(movieId)
+    .then((key) => {
+      let trailerKey = key;
+      localStorage.setItem("key", trailerKey);
+    }) 
 }
 
 function renderModalCard(res) {
@@ -40,10 +45,9 @@ function renderModalCard(res) {
   modalBackdrop.addEventListener('click', modalClose);
   closeButton.addEventListener('click', modalClose);
   btnWatchTrailer.addEventListener('click', onTrailerBtnClick);
-  btnAddToWatched.addEventListener('click', addToWatched);
-  btnAddToQueue.addEventListener('click', addToQueue);
+  // btnAddToWatched.addEventListener('click', addToWatched);
+  // btnAddToQueue.addEventListener('click', addToQueue);
   window.addEventListener('keydown', modalCloseByEsc);
-
 
 }
 
@@ -52,6 +56,7 @@ function modalClose() {
   modalCard.classList.remove('is-open');
   document.body.style.overflow = '';
   window.removeEventListener('keydown', modalCloseByEsc);
+  localStorage.removeItem("key");
 }
 
 function modalCloseByEsc(e) {
@@ -60,38 +65,22 @@ function modalCloseByEsc(e) {
   }
 }
 
-// Смотреть трейлер
-
-// function onTrailerBtnClick(e) {
-//   trailerBackdrop.classList.remove('visually-hidden');
-//   API.getTrailerKey(movieId).then((key) => console.log('key', key));
-//   const filmUrl = e.target.dataset.id;
-//   console.log(filmUrl)
-//   renderTrailer(500);
-//   console.log('Работает1')
-// }
-
-// function renderTrailer(key) {
-//   trailerContainer.style.backgroundImage = `url(https://img.youtube.com/vi/${key}/maxresdefault.jpg)`;
-//   const trailerUrl = `https://www.youtube.com/embed/${key}?autoplay=0&enablejsapi=1&rel=0&modestbranding=1&`;
-//   const video = `<iframe
-//       id="player"
-//       src="${trailerUrl}"
-//       width="640"
-//       height="360"
-//       frameborder="0"
-//       allowfullscreen
-//       allow="autoplay; encrypted-media"
-//     ></iframe>`;
-//   trailerContainer.innerHTML = video;
-// }
+// Функция открытия трейлера
+function onTrailerBtnClick(e) {
+    let trailerKey = localStorage.getItem("key")
+    const trailer = basicLightbox
+      .create(
+        `<iframe width="300" height="300" src='https://www.youtube.com/embed/${trailerKey}'frameborder="0" allowfullscreen class="trailer"></iframe>`,
+      )
+    .show();
+  }
 
 // Функция добавления фильмов в просмотренные
-function addToWatched() {
-  console.log('Работает2') 
-}
+// function addToWatched() {
+//   console.log('Работает2') 
+// }
 
 // Функция добавления фильмов в очередь
-function addToQueue() {
-  console.log('Работает3')
-}
+// function addToQueue() {
+//   console.log('Работает3')
+// }
