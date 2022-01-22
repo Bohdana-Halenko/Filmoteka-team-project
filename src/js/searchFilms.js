@@ -28,6 +28,7 @@ function onSubmit(e) {
   e.preventDefault()
   const form = e.currentTarget;
   const searchName = form.elements.filmName.value;
+   
   
   const normalizedName = searchName.toLowerCase().trim().split(' ').join('+')
   console.log(normalizedName)
@@ -45,5 +46,5 @@ function onSubmit(e) {
     transformData(moviesData);
     transformGenres(moviesData);
     loadStartGallery(moviesData);
-  } )
+  } ).finally(() => form.reset())
 }
