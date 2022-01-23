@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import { dataRequest } from './loadStartGallery';
-import { slowScroll } from './slowScroll'
+import { slowScroll } from './slowScroll';
+
 
 const container = document.getElementById('tui-pagination-container');
 
@@ -37,19 +38,12 @@ export const initPagination = ({ page, totalItems }) => {
   pagination.on('afterMove', (event) => {
     const currentPage = event.page;
     // console.log(currentPage);
-    
-    // Здесь нужно будет и для поиска написать и что-то придумать со скроллом
+
     dataRequest(currentPage);
+    
     slowScroll()
   })
   return pagination;
 };
 
-// Возврат в начало галлереи
-// function backToTop() {
-//   if (window.pageYOffset > 0) {
-//     window.scrollBy(0, -30);
-//     setTimeout(backToTop, 0);
-//   }
-// }
   

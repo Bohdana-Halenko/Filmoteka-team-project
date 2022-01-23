@@ -1,6 +1,8 @@
 import api from "./apiService";
-import { transformData, transformGenres, loadStartGallery, } from '../js/loadStartGallery';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { transformData,transformGenres,loadStartGallery, } from '../js/loadStartGallery';
+import Pagination from 'tui-pagination';
+import { slowScroll } from './slowScroll';
+
 
 let name = '';
 
@@ -9,6 +11,15 @@ const notificationEl = document.querySelector('.notification');
 
 
 searchFormEl.addEventListener('submit', onSubmit);
+
+const container = document.getElementById('tui-pagination-container');
+const pagination = new Pagination(container, {
+  page: 1,
+  totalItems: 0,
+  itemsPerPage: 20,
+  visiblePages: 5
+});
+const page = pagination.getCurrentPage();
 
 function onSubmit(e) {
   e.preventDefault()
@@ -23,13 +34,38 @@ function onSubmit(e) {
    return
   }
   name = normalizedName
-  api.getMovieBySearch(name, 1).then(data => {
+
+  
+
+  api.getMovieBySearch(name, page).then(data => {
     const moviesData = data.resultsSearch 
     if (moviesData.length === 0) {
      Notify.failure('Search result not successful. Enter the correct movie name')
 }
     transformData(moviesData);
     transformGenres(moviesData);
+    pagination.reset(data.totalItems);
+    console.log(data.totalItems)
+
     loadStartGallery(moviesData);
+
+    
+    
+
   } ).finally(() => form.reset())
 }
+
+pagination.on('afterMove', (event) => {
+    const currentPage = event.page;
+    // console.log(currentPage);
+ api.getMovieBySearch(name, currentPage).then(data => {
+    const moviesData = data.resultsSearch 
+    
+    transformData(moviesData);
+    transformGenres(moviesData);
+    
+
+    loadStartGallery(moviesData);
+  
+    slowScroll()
+ })})
