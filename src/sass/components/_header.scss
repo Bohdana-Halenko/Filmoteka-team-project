@@ -185,10 +185,12 @@
 }
 @media screen and (max-width: 767px) {
   .header__container {
-    background-image: url('../images/header/header-main-mobile-1x.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-mobile-1x.jpg');
 
     &-library {
-      background-image: url('../images/header/header-library-mobile-1x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-mobile-1x.jpg');
     }
   }
 }
@@ -196,21 +198,25 @@
   (min-resolution: 192dpi) and (max-widtn: 767px),
   (min-resolution: 2dppx) and (max-widtn: 767px) {
   .header__container {
-    background-image: url('../images/header/header-main-mobile-2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-mobile-2x.jpg');
 
     &-library {
-      background-image: url('../images/header/header-library-mobile-2x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-mobile-2x.jpg');
     }
   }
 }
 
 @media screen and (min-width: 768px) {
   .header__container {
-    background-image: url('../images/header/header-main-tablet-1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-tablet-1x.jpg');
     width: 768px;
     padding-top: 46px;
     &-library {
-      background-image: url('../images/header/header-library-tablet-1x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-tablet-1x.jpg');
       width: 768px;
       padding-top: 46px;
       .logo__container {
@@ -250,16 +256,19 @@
   (min-resolution: 192dpi) and (min-width: 768px),
   (min-resolution: 2dppx) and (min-width: 768px) {
   .header__container {
-    background-image: url('../images/header/header-main-tablet-2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-tablet-2x.jpg');
 
     &-library {
-      background-image: url('../images/header/header-library-tablet-2x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-tablet-2x.jpg');
     }
   }
 }
 @media screen and (min-width: 1024px) {
   .header__container {
-    background-image: url('../images/header/header-main-desktop-1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-desktop-1x.jpg');
     width: 1024px;
     .logo__container {
       width: 175px;
@@ -268,7 +277,8 @@
       width: 882px;
     }
     &-library {
-      background-image: url('../images/header/header-library-desktop-1x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-desktop-1x.jpg');
       width: 1024px;
       .logo__container {
         width: 175px;
@@ -283,10 +293,12 @@
   (min-resolution: 192dpi) and (min-width: 1024px),
   (min-resolution: 2dppx) and (min-width: 1024px) {
   .header__container {
-    background-image: url('../images/header/header-main-desktop-2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-main-desktop-2x.jpg');
 
     &-library {
-      background-image: url('../images/header/header-library-desktop-2x.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/header/header-library-desktop-2x.jpg');
     }
   }
 }
