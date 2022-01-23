@@ -113,6 +113,10 @@
     margin: 0 auto;
     border-bottom: 0.2px solid #f7f7f7bd;
   }
+  &__form:hover,
+  &__form:focus {
+    border-bottom: 0.2px solid $accent-color;
+  }
   &__input {
     border: none;
     outline: none;
@@ -124,6 +128,10 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
+  }
+  &__img:hover {
+    width: 18px;
+    height: 18px;
   }
   &__btn {
     background-color: $transparent;
