@@ -1,7 +1,7 @@
 import modalCardTpl from '../templates/modal-card.hbs';
 import API from './apiService';
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/dist/basicLightbox.min.css';
+// import 'basicLightbox/dist/basicLightbox.min.css';
 
 // =========================================================
 const galleryList = document.querySelector('.gallery-list');
