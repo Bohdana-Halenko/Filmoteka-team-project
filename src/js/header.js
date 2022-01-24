@@ -1,4 +1,4 @@
-import { dataRequest } from './loadStartGallery';
+import { dataRequest, clearGallery } from './loadStartGallery';
 
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
@@ -39,6 +39,8 @@ function changeClassToLibrary(e) {
 
   headerContainer.classList.remove('header__container-non-active');
   headerContainer.classList.add('header__container-library');
+
+  clearGallery();
 }
 function addWatchedBtnAccent() {
   buttonWatched.classList.add('library__btn-active');
