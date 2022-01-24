@@ -1,0 +1,16 @@
+.darkmode--activated a {
+  color: white;
+}
+
+.dark-button__icon {
+  position: fixed;
+  bottom: 108px;
+
+  left: 46px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  background-color: transparent;
+}

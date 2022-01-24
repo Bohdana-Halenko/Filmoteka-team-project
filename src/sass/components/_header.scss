@@ -1,5 +1,6 @@
 .header {
   background-color: $primary-text-color;
+  isolation: isolate;
 }
 .header__container {
   background-position: top;
