@@ -15,7 +15,7 @@
 //   background-color: transparent;
 // }
 
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 .dark a {
   color: $primary-background-color;
@@ -24,6 +24,7 @@
 h3 {
   color: $primary-background-color;
 }
+
 body.dark {
   // background:#292c35 ;
   // color: #fff;
@@ -40,7 +41,7 @@ body.dark {
   background-color: #111;
   color: #fff;
   border-radius: 50px;
-  border: solid 1px #111;
+  border: solid 1px $accent-color;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -71,11 +72,15 @@ body.dark {
 
 .fa-moon {
   position: absolute;
+  font-size: 12px;
+  left: 5px;
+  top: 7px;
 }
 
 .fa-sun {
-  color: $accent-color;
+  // color: $accent-color;
+  font-size: 12px;
   position: absolute;
   right: 7px;
-  top: 5px;
+  top: 7px;
 }
