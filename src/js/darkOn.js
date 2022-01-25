@@ -3,7 +3,6 @@
 // new Darkmode().showWidget();
 
 
-
 // const options = {
 //   bottom: '95px', // default: '32px'
 //   left: '32px', // default: 'unset'
@@ -19,11 +18,16 @@
 // const darkmode = new Darkmode(options);
 // darkmode.showWidget();
 
+
+
+// ----------------------new dark-button--------------------------------------------------------------------------------
+
 const chk = document.getElementById('chk');
 
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
 });
+
 
 
 
