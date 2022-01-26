@@ -38,7 +38,7 @@ body.dark {
     color: #fff;
   }
   & .login-form__input:hover,
-  :focus {
+  .login-form__input:focus {
     color: #000;
     background-color: #fdccaa;
   }
@@ -49,22 +49,19 @@ body.dark {
     border: 2px solid $accent-color;
   }
   & .login-form__btn-login:hover,
-  :focus {
+  .login-form__btn-login:focus {
     // border-color: $accent-color;
     color: #000;
     background-color: #fff;
     transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   & .login-form__btn-to-registartion:hover,
-  :focus {
+  .login-form__btn-to-registartion:focus {
     color: #000;
     background-color: #fff;
     transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  & .search__input:hover,
-  :focus {
-    background-color: transparent;
-  }
+
   & .film__vote {
     color: #000;
   }
@@ -78,16 +75,16 @@ body.dark {
     background-color: #fff;
   }
   & .btn__watch:hover,
-  :focus,
+  .btn__watch:focus,
   .btn__queue:hover,
-  :focus {
+  .btn__queue:focus {
     background-color: $accent-color;
   }
   & .btn__trailer {
     color: #f00;
   }
   & .btn__trailer:hover,
-  :focus {
+  .btn__trailer:focus {
     background-color: #fff;
   }
 
@@ -96,9 +93,9 @@ body.dark {
     color: #fff;
   }
   & .library__btn-watched:hover,
-  :focus,
+  .library__btn-watched:focus,
   .library__btn-queue:hover,
-  :focus {
+  .library__btn-queue:focus {
     background-color: $accent-color;
     border: 1px solid $accent-color;
   }
@@ -123,7 +120,7 @@ body.dark {
   }
 
   & .git-icon:hover,
-  :focus {
+  .git-icon:focus {
     fill: $accent-color;
   }
 }
