@@ -68,7 +68,7 @@ function modalCloseByEsc(e) {
 
 // Функция открытия трейлера
 function onTrailerBtnClick(e) {
-    let trailerKey = localStorage.getItem("key")
+    let trailerKey = localStorage.getItem("trailer-key")
     const trailer = basicLightbox
       .create(
         `<iframe width="300" height="300" src='https://www.youtube.com/embed/${trailerKey}'frameborder="0" allowfullscreen class="trailer"></iframe>`,
