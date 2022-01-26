@@ -27,6 +27,7 @@ import './renderOnClickLogo';
 import API from './apiService';
 
 // import './darkOn';
+import './openNewWindow'
 
 //Loader
 import './loader';
