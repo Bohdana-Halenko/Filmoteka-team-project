@@ -18,13 +18,15 @@ function clickOnMovie(e) {
   API.getMovieDetails(movieId)
     .then((res) => {
       renderModalCard(res);
+      changeActiveOfBtns(movieId);
     })
     
   API.getTrailerKey(movieId)
     .then((key) => {
       let trailerKey = key;
       localStorage.setItem("trailer-key", trailerKey);
-    }) 
+    })
+  
 }
 
 function renderModalCard(res) {
@@ -88,37 +90,65 @@ if (localStorage.getItem('arrayOfQueue') !== null) {
   arrayOfQueue = JSON.parse(arrayOfQueue);
 }
 
+// Проверка при открытии модалки наличия фильмов в списках и отображение этого в кнопках
+function changeActiveOfBtns(filmId) {
+  const btnAddToWatched = modalCard.querySelector('.btn__watch');
+  const btnAddToQueue = modalCard.querySelector('.btn__queue');
+
+  if (arrayOfWatched.includes(filmId)) {
+    console.log('уже есть в просмотренных')
+    btnAddToWatched.textContent = 'Remove from watched';
+  }
+  else {
+    console.log('нет такого в просмотренных');
+    btnAddToWatched.textContent = 'Add to watched';
+  }
+
+  if (arrayOfQueue.includes(filmId)) {
+    console.log('уже есть в очереди')
+    btnAddToQueue.textContent = 'Remove from queue';
+  }
+  else {
+    console.log('нет такого в очереди');
+    btnAddToQueue.textContent = 'Add to queue';
+  }
+}
+
 // Функция добавления фильмов в просмотренные
 function addToWatched(e) {
   const btnAddToWatched = modalCard.querySelector('.btn__watch');
-  btnAddToWatched.textContent = 'REMOVE FROM WATCHED';
-  
   let filmId = e.target.dataset.id;
   
-  // если нет в массиве, то добавь
-  if (!arrayOfWatched.includes(filmId)) {
-          arrayOfWatched.push(filmId);
+  if (arrayOfWatched.includes(filmId) && e.target.textContent === 'Remove from watched') {
+    const filteredArr = JSON.parse(localStorage.getItem('arrayOfWatched')).filter(el => el !== filmId);
+    localStorage.setItem('arrayOfWatched', JSON.stringify(filteredArr));
+    console.log('нет такого в просмотренных');
+    btnAddToWatched.textContent = 'Add to watched';
   }
-  // и запиши в локал
-  localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
+  else {
+    arrayOfWatched.push(filmId);
+    localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
+    console.log('уже есть в просмотренных')
+    btnAddToWatched.textContent = 'Remove from watched';
+  }
   
-  console.log('добавлен в просмотренные')
-
 }
 
 // Функция добавления фильмов в очередь
 function addToQueue(e) {
   const btnAddToQueue = modalCard.querySelector('.btn__queue');
-  btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
-  
   let filmId = e.target.dataset.id;
- 
-  // если нет в массиве, то добавь
-  if (!arrayOfQueue.includes(filmId)) {
-          arrayOfQueue.push(filmId);
+
+  if (arrayOfQueue.includes(filmId) && e.target.textContent === 'Remove from queue') {
+    const filteredArr = JSON.parse(localStorage.getItem('arrayOfQueue')).filter(el => el !== filmId);
+    localStorage.setItem('arrayOfQueue', JSON.stringify(filteredArr));
+    console.log('нет такого в списке');
+    btnAddToQueue.textContent = 'Add to queue';
   }
-  // и запиши в локал
-  localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
-  
-  console.log('добавлен в список')
+  else {
+    arrayOfQueue.push(filmId);
+    localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
+    console.log('уже есть в списке')
+    btnAddToQueue.textContent = 'Remove from queue';
+  }
 }
