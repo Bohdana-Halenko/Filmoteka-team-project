@@ -45,10 +45,13 @@ async function getMovieDetails(movieId) {
     const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
     return await axios
         .get(url)
-        .then((response) => ({
+        .then((response) => {
+            // console.log('MovieDetails', response.data);
+            return {
                 data: response.data,
                 genresCut: response.data.genres.slice(0, 3)
-        }))
+            }
+        })
         .catch((error) => {console.error("Something wrong with getMovieDetails fetch", error.message)
         
     })

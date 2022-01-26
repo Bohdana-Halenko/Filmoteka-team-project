@@ -23,7 +23,7 @@ function clickOnMovie(e) {
   API.getTrailerKey(movieId)
     .then((key) => {
       let trailerKey = key;
-      localStorage.setItem("key", trailerKey);
+      localStorage.setItem("trailer-key", trailerKey);
     }) 
 }
 
@@ -44,8 +44,8 @@ function renderModalCard(res) {
   modalBackdrop.addEventListener('click', modalClose);
   closeButton.addEventListener('click', modalClose);
   btnWatchTrailer.addEventListener('click', onTrailerBtnClick);
-  // btnAddToWatched.addEventListener('click', addToWatched);
-  // btnAddToQueue.addEventListener('click', addToQueue);
+  btnAddToWatched.addEventListener('click', addToWatched);
+  btnAddToQueue.addEventListener('click', addToQueue);
   window.addEventListener('keydown', modalCloseByEsc);
 
 }
@@ -74,12 +74,51 @@ function onTrailerBtnClick(e) {
     .show();
   }
 
+// определим массивы для хранения
+let arrayOfWatched = [];
+let arrayOfQueue = [];
+
+if (localStorage.getItem('arrayOfWatched') !== null) {
+  arrayOfWatched = localStorage.getItem('arrayOfWatched');
+  arrayOfWatched = JSON.parse(arrayOfWatched);
+}
+
+if (localStorage.getItem('arrayOfQueue') !== null) {
+  arrayOfQueue = localStorage.getItem('arrayOfQueue');
+  arrayOfQueue = JSON.parse(arrayOfQueue);
+}
+
 // Функция добавления фильмов в просмотренные
-// function addToWatched() {
-//   console.log('Работает2') 
-// }
+function addToWatched(e) {
+  const btnAddToWatched = modalCard.querySelector('.btn__watch');
+  btnAddToWatched.textContent = 'REMOVE FROM WATCHED';
+  
+  let filmId = e.target.dataset.id;
+  
+  // если нет в массиве, то добавь
+  if (!arrayOfWatched.includes(filmId)) {
+          arrayOfWatched.push(filmId);
+  }
+  // и запиши в локал
+  localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
+  
+  console.log('добавлен в просмотренные')
+
+}
 
 // Функция добавления фильмов в очередь
-// function addToQueue() {
-//   console.log('Работает3')
-// }
+function addToQueue(e) {
+  const btnAddToQueue = modalCard.querySelector('.btn__queue');
+  btnAddToQueue.textContent = 'REMOVE FROM QUEUE';
+  
+  let filmId = e.target.dataset.id;
+ 
+  // если нет в массиве, то добавь
+  if (!arrayOfQueue.includes(filmId)) {
+          arrayOfQueue.push(filmId);
+  }
+  // и запиши в локал
+  localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
+  
+  console.log('добавлен в список')
+}
