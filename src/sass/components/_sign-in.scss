@@ -18,7 +18,7 @@
   flex-direction: column;
   width: 280px;
   height: 380px;
-  margin: 0 auto;
+  margin: auto;
   color: $secondary-text-color;
   font-family: $primary-font-family;
   font-weight: 400;
@@ -38,8 +38,9 @@
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: $transparent;
+  background-color: #fff;
   color: $primary-text-color;
+
   &:hover,
   &:focus {
     background-color: $accent-color;

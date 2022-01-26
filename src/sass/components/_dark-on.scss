@@ -20,16 +20,88 @@
 .dark a {
   color: $primary-background-color;
 }
-.dark h2,
-h3 {
-  color: $primary-background-color;
-}
 
 body.dark {
   // background:#292c35 ;
   // color: #fff;
 
   background-color: #292c35;
+  & .modal__container,
+  .login-form__wraper {
+    background-color: #292c35;
+    color: #fff;
+  }
+
+  & .login-form__label,
+  .login-form__offer-registration {
+    color: #fff;
+  }
+  & .login-form__btn-login,
+  .login-form__btn-to-registartion {
+    color: #fff;
+    background-color: $accent-color;
+    border: 2px solid $accent-color;
+  }
+  & .login-form__btn-login:hover,
+  :focus {
+    // border-color: $accent-color;
+    color: #000;
+    background-color: #fff;
+    transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  & .login-form__btn-to-registartion:hover,
+  :focus {
+    color: #000;
+    background-color: #fff;
+    transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  & .film__vote {
+    color: #000;
+  }
+  & .card-title {
+    color: #fff;
+  }
+
+  & .btn__trailer,
+  .film__button {
+    background-color: #fff;
+  }
+  & .film__button:hover,
+  :focus {
+    background-color: $accent-color;
+  }
+  & .btn__trailer:hover,
+  :focus {
+    color: #f00;
+    background-color: #fff;
+  }
+
+  & .library__btn:hover,
+  :focus {
+    color: #fff;
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+  & .footer,
+  .footer__button,
+  .footer__container,
+  .group__item {
+    color: #fff;
+    background-color: #383c49;
+  }
+  & .footer-modal-group,
+  .team-name {
+    background-color: #292c35;
+    color: #fff;
+  }
+  & .git-icon {
+    fill: #fff;
+  }
+
+  & .git-icon:hover,
+  :focus {
+    fill: $accent-color;
+  }
 }
 
 .checkbox {
