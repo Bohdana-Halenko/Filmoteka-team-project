@@ -170,6 +170,7 @@
   border-radius: 5px;
   color: $lighter-text-color;
   background-color: $transparent;
+  cursor: pointer;
 
   &-active {
     height: 44px;
@@ -177,6 +178,7 @@
     border-radius: 5px;
     color: $lighter-text-color;
     background-color: $accent-color;
+    cursor: pointer;
   }
   &-watched {
     width: 130px;
