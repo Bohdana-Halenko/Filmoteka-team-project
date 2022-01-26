@@ -1,4 +1,5 @@
-import { dataRequest, clearGallery } from './loadStartGallery';
+import { dataRequest, clearGallery, loadStartGallery } from './loadStartGallery';
+import API from './apiService';
 
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
@@ -57,3 +58,33 @@ function openSignInForm(){
   formWindow.classList.toggle('is-hidden')
 }
 export { changeClassToHome, changeClassToLibrary, addWatchedBtnAccent, addQueueBtnAccent, openSignInForm };
+
+// =================================================
+// Отрисовываем Library
+// Это очень сырой набросок
+  
+const galleryList = document.querySelector('.gallery-list');
+
+buttonWatched.addEventListener('click', onWatchedBtn);
+
+function onWatchedBtn(e) {
+  // очищаем галлерею
+  galleryList.innerHTML = '';
+
+  let watchedArray = localStorage.getItem('arrayOfWatched');
+  watchedArray = JSON.parse(watchedArray);
+
+  console.log(watchedArray);
+     
+  if (watchedArray) {
+    for (const film of watchedArray) {
+      API.getMovieDetails(film)
+        .then(film => {
+          loadStartGallery(film);
+          console.log(film);
+        })
+        .catch(error => console.log(error));
+    }
+  }
+
+}
