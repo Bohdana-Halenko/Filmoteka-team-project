@@ -26,6 +26,7 @@ body.dark {
   // color: #fff;
 
   background-color: #292c35;
+
   & .modal__container,
   .login-form__wraper {
     background-color: #292c35;
@@ -35,6 +36,11 @@ body.dark {
   & .login-form__label,
   .login-form__offer-registration {
     color: #fff;
+  }
+  & .login-form__input:hover,
+  :focus {
+    color: #000;
+    background-color: #fdccaa;
   }
   & .login-form__btn-login,
   .login-form__btn-to-registartion {
@@ -55,6 +61,10 @@ body.dark {
     background-color: #fff;
     transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+  & .search__input:hover,
+  :focus {
+    background-color: transparent;
+  }
   & .film__vote {
     color: #000;
   }
@@ -63,22 +73,32 @@ body.dark {
   }
 
   & .btn__trailer,
-  .film__button {
+  .btn__watch,
+  .btn__queue {
     background-color: #fff;
   }
-  & .film__button:hover,
+  & .btn__watch:hover,
+  :focus,
+  .btn__queue:hover,
   :focus {
     background-color: $accent-color;
   }
+  & .btn__trailer {
+    color: #f00;
+  }
   & .btn__trailer:hover,
   :focus {
-    color: #f00;
     background-color: #fff;
   }
 
-  & .library__btn:hover,
-  :focus {
+  & .library__btn-watched,
+  .library__btn-queue {
     color: #fff;
+  }
+  & .library__btn-watched:hover,
+  :focus,
+  .library__btn-queue:hover,
+  :focus {
     background-color: $accent-color;
     border: 1px solid $accent-color;
   }
@@ -93,6 +113,10 @@ body.dark {
   .team-name {
     background-color: #292c35;
     color: #fff;
+  }
+  & .git {
+    border: transparent;
+    background-color: transparent;
   }
   & .git-icon {
     fill: #fff;
