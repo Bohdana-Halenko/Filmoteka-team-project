@@ -1,0 +1,30 @@
+  <li class="gallery-card">
+    <div class="gallery-container__img">
+        {{#if poster_path}} <img class="card-img" src='https://image.tmdb.org/t/p/w500{{poster_path}}' loading="lazy"
+            alt='Film {{title}} poster' data-id="{{id}}" />
+        {{/if}}
+        {{#unless poster_path}}
+        <img class="card-img" src='https://i.pinimg.com/originals/74/3d/b2/743db230d891b47c1d8c66b161111b91.jpg'
+            loading="lazy" alt='Film {{title}} poster' data-id="{{id}}" />
+        {{/unless}}
+    </div>
+    <div class="card-info">
+
+        <h2 class="card-title" data-id="{{id}}">{{title}}</h2>
+
+        <p class="card-genre">
+            {{#each genres}}
+            {{this.name}}
+            {{/each}}
+        </p>
+
+        {{#if release_date}}
+        <p class="card-release-year">{{release_date}}</p>
+        {{/if}}
+
+        {{#if vote_average}}
+        <p class="card-raiting card-raiting--bg">{{vote_average}}</p>
+        {{/if}}
+
+    </div>
+</li>

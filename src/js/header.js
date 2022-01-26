@@ -1,6 +1,10 @@
-import { dataRequest, clearGallery, loadStartGallery } from './loadStartGallery';
-import API from './apiService';
+import axios from 'axios';
+import libraryTpl from '../templates/library.hbs';
+import { dataRequest, noSaved, noPagination } from './loadStartGallery';
 
+const BASE_URL = `https://api.themoviedb.org/3`;
+const API_KEY = `6a7bc4e26417129845bc117e7a600f1d`;
+// ==============================================================
 const navElemHome = document.querySelector('.nav-list__item-home');
 const navElemLibrary = document.querySelector('.nav-list__item-library');
 const signIn = document.querySelector('.sign-in__button')
@@ -41,7 +45,7 @@ function changeClassToLibrary(e) {
   headerContainer.classList.remove('header__container-non-active');
   headerContainer.classList.add('header__container-library');
 
-  clearGallery();
+  
 }
 function addWatchedBtnAccent() {
   buttonWatched.classList.add('library__btn-active');
@@ -61,30 +65,73 @@ export { changeClassToHome, changeClassToLibrary, addWatchedBtnAccent, addQueueB
 
 // =================================================
 // Отрисовываем Library
-// Это очень сырой набросок
-  
+
 const galleryList = document.querySelector('.gallery-list');
+const libraryBtn = document.querySelector('.nav-list__link-library');
 
+libraryBtn.addEventListener('click', onLibrary)
 buttonWatched.addEventListener('click', onWatchedBtn);
+buttonQueue.addEventListener('click', onQueueBtn);
 
-function onWatchedBtn(e) {
-  // очищаем галлерею
+function onLibrary(e) {
+  if (localStorage.getItem('arrayOfWatched') === null) {
+    noSaved();
+  }
+  else {
+    onWatchedBtn();
+    noPagination();
+  }
+
+}
+
+function onWatchedBtn() {
   galleryList.innerHTML = '';
 
   let watchedArray = localStorage.getItem('arrayOfWatched');
   watchedArray = JSON.parse(watchedArray);
-
-  console.log(watchedArray);
-     
+ 
   if (watchedArray) {
-    for (const film of watchedArray) {
-      API.getMovieDetails(film)
-        .then(film => {
-          loadStartGallery(film);
-          console.log(film);
+    for (const filmId of watchedArray) {
+      fetchSavedFilms(filmId)
+        .then(savedFilms => {
+          renderSaved(savedFilms)
         })
         .catch(error => console.log(error));
     }
   }
-
 }
+
+function onQueueBtn() {
+  galleryList.innerHTML = '';
+
+  let queueArray = localStorage.getItem('arrayOfQueue');
+  queueArray = JSON.parse(queueArray);
+ 
+  if (queueArray) {
+    for (const filmId of queueArray) {
+      fetchSavedFilms(filmId)
+        .then(savedFilms => {
+          renderSaved(savedFilms)
+        })
+        .catch(error => console.log(error));
+    }
+  }
+}
+
+
+function fetchSavedFilms(filmId) {
+  return axios
+    .get(
+    `${BASE_URL}/movie/${filmId}?api_key=${API_KEY}&language=en-US`,
+  )
+    .then(response => {
+    return response.data;
+    })
+    .catch(error => console.log(error));
+}
+
+function renderSaved(savedFilms) {
+  const markup = libraryTpl(savedFilms);
+  galleryList.insertAdjacentHTML('beforeend', markup);
+}
+

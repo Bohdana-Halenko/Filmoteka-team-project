@@ -96,20 +96,20 @@ function changeActiveOfBtns(filmId) {
   const btnAddToQueue = modalCard.querySelector('.btn__queue');
 
   if (arrayOfWatched.includes(filmId)) {
-    console.log('уже есть в просмотренных')
+    // console.log('уже есть в просмотренных')
     btnAddToWatched.textContent = 'Remove from watched';
   }
   else {
-    console.log('нет такого в просмотренных');
+    // console.log('нет такого в просмотренных');
     btnAddToWatched.textContent = 'Add to watched';
   }
 
   if (arrayOfQueue.includes(filmId)) {
-    console.log('уже есть в очереди')
+    // console.log('уже есть в очереди')
     btnAddToQueue.textContent = 'Remove from queue';
   }
   else {
-    console.log('нет такого в очереди');
+    // console.log('нет такого в очереди');
     btnAddToQueue.textContent = 'Add to queue';
   }
 }
@@ -130,6 +130,7 @@ function addToWatched(e) {
     localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
     console.log('уже есть в просмотренных')
     btnAddToWatched.textContent = 'Remove from watched';
+
   }
   
 }
