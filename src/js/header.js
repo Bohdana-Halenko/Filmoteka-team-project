@@ -100,8 +100,9 @@ export function onWatchedBtn() {
     for (const filmId of watchedArray) {
       fetchSavedFilms(filmId)
         .then(savedFilms => {
-          // transformYear(savedFilms);
-          renderSaved(savedFilms)
+          transformYear(savedFilms);
+          transformG(savedFilms);
+          renderSaved(savedFilms);
         })
         .catch(error => console.log(error));
     }
@@ -109,11 +110,16 @@ export function onWatchedBtn() {
   
 }
 
-// function transformYear(savedFilms) {
-//   const release_date = savedFilms.release_date.slice(0, 4);
-//   console.log(release_date)
-//   return release_date
-// }
+function transformYear(savedFilms) {
+  savedFilms.release_date = savedFilms.release_date.slice(0, 4);
+  return savedFilms.release_date
+}
+
+function transformG (savedFilms) {
+  savedFilms.genres = savedFilms.genres.slice(0, 3)
+  return savedFilms.genres
+}
+
 
 export function onQueueBtn() {
   galleryList.innerHTML = '';
