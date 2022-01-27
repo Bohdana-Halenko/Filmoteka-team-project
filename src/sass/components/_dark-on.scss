@@ -28,13 +28,18 @@ body.dark {
   background-color: #292c35;
 
   & .modal__container,
-  .login-form__wraper {
+  .login-form__wraper,
+  .registration-form__wraper {
     background-color: #292c35;
     color: #fff;
   }
 
   & .login-form__label,
-  .login-form__offer-registration {
+  .login-form__offer-registration,
+  .registration-form__offer-registration,
+  .registration-form__label-email,
+  .registration-form__label-passw,
+  .registration-form__label-repeat-passw {
     color: #fff;
   }
   & .login-form__input:hover,
@@ -42,8 +47,14 @@ body.dark {
     color: #000;
     background-color: #fdccaa;
   }
+  & .registration-form__input:hover,
+  .registration-form__input:focus {
+    color: #000;
+    background-color: #fdccaa;
+  }
   & .login-form__btn-login,
-  .login-form__btn-to-registartion {
+  .login-form__btn-to-registartion,
+  .registration-form__btn {
     color: #fff;
     background-color: $accent-color;
     border: 2px solid $accent-color;
@@ -57,6 +68,12 @@ body.dark {
   }
   & .login-form__btn-to-registartion:hover,
   .login-form__btn-to-registartion:focus {
+    color: #000;
+    background-color: #fff;
+    transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  & .registration-form__btn:hover,
+  .registration-form__btn:focus {
     color: #000;
     background-color: #fff;
     transition: $accent-color 250ms cubic-bezier(0.4, 0, 0.2, 1);

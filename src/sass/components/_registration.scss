@@ -7,7 +7,7 @@
   flex-direction: column;
   width: 300px;
   height: 450px;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 3px;
   background-color: $footer-background-color;
 }
@@ -18,7 +18,7 @@
   flex-direction: column;
   width: 280px;
   height: 380px;
-  margin: 0 auto;
+  margin: auto;
   padding-top: 20px;
   color: $secondary-text-color;
   font-family: $primary-font-family;
@@ -32,15 +32,16 @@
   justify-content: center;
   position: absolute;
   cursor: pointer;
+  z-index: 1000;
   top: 10px;
   right: 10px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: $transparent;
+  background-color: #fff;
   color: $primary-text-color;
-  z-index: 1000;
+
   &:hover,
   &:focus {
     background-color: $accent-color;
