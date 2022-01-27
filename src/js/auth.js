@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, connectAuthEmulator } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const auth = getAuth();
@@ -8,10 +8,12 @@ const refs = {
   password: document.querySelector('.login-form__input-passw'),
   loginbtn: document.querySelector('.login-form__btn-login'),
   modal: document.querySelector('.login-form__window'),
+  signInBtn: document.querySelector('.sign-in__button'),
 };
 
 const loginEmailPassword = async () => {
   event.preventDefault();
+
   const loginEmail = refs.email.value;
   const loginPassword = refs.password.value;
 
@@ -19,9 +21,9 @@ const loginEmailPassword = async () => {
     const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
     Notify.success('You are logged in!');
     refs.modal.classList.add('is-hidden');
+    refs.signInBtn.classList.add('is-hidden');
   } catch (error) {
     Notify.failure('Login error:( Try again!');
-    console.log(error);
   }
 };
 
