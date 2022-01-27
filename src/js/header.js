@@ -92,8 +92,6 @@ export function onWatchedBtn() {
  
   if (watchedArray.length === 0) {
     noSaved();
-    // const markup = `<p class="library__title">Please, add something</p>`
-    // galleryList.innerHTML = markup;
   }
 
   else
@@ -125,8 +123,6 @@ export function onQueueBtn() {
  
   if (queueArray.length === 0) {
      noSaved();
-    // const markup = `<p class="library__title">Please, add something</p>`
-    // galleryList.innerHTML = markup;
   }
    else
      if (queueArray) {

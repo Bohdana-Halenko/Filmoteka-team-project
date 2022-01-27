@@ -140,24 +140,6 @@ function addToWatched(e) {
     onWatchedBtn();
   }
   
-
-
-  // if (arrayOfWatched.includes(filmId) && e.target.textContent === 'Remove from watched') {
-  //   const filteredArr = JSON.parse(localStorage.getItem('arrayOfWatched')).filter(el => el !== filmId);
-  //   localStorage.setItem('arrayOfWatched', JSON.stringify(filteredArr));
-  //   console.log('удален');
-  //   btnAddToWatched.textContent = 'Add to watched';
-  //   // перезаписать
-  //   onWatchedBtn();
-  // }
-  // else {
-  //   arrayOfWatched.push(filmId);
-  //   localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
-  //   console.log('добавлен')
-  //   btnAddToWatched.textContent = 'Remove from watched';
-
-  // }
-  
 }
 
 // Функция добавления фильмов в очередь
