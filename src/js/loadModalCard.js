@@ -1,6 +1,9 @@
 import modalCardTpl from '../templates/modal-card.hbs';
 import API from './apiService';
 import * as basicLightbox from 'basiclightbox';
+import { onWatchedBtn, onQueueBtn } from './header';
+import { noSaved } from './loadStartGallery';
+
 
 // =========================================================
 const galleryList = document.querySelector('.gallery-list');
@@ -116,40 +119,85 @@ function changeActiveOfBtns(filmId) {
 
 // Функция добавления фильмов в просмотренные
 function addToWatched(e) {
-  const btnAddToWatched = modalCard.querySelector('.btn__watch');
   let filmId = e.target.dataset.id;
   
-  if (arrayOfWatched.includes(filmId) && e.target.textContent === 'Remove from watched') {
+  if (e.target.textContent === 'Add to watched') {
+    
+        if (!arrayOfWatched.includes(filmId)) {
+          arrayOfWatched.push(filmId);
+        }
+
+    localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
+    e.target.textContent = 'Remove from watched';
+  }
+  else if (arrayOfWatched.includes(filmId) && e.target.textContent === 'Remove from watched') {
     const filteredArr = JSON.parse(localStorage.getItem('arrayOfWatched')).filter(el => el !== filmId);
     localStorage.setItem('arrayOfWatched', JSON.stringify(filteredArr));
-    console.log('нет такого в просмотренных');
-    btnAddToWatched.textContent = 'Add to watched';
+    e.target.textContent = 'Add to watched';
   }
-  else {
-    arrayOfWatched.push(filmId);
-    localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
-    console.log('уже есть в просмотренных')
-    btnAddToWatched.textContent = 'Remove from watched';
+  // если активна библиотека
+  if (document.querySelector('.nav-list__item-library-active')) {
+    onWatchedBtn();
+  }
+  
 
-  }
+
+  // if (arrayOfWatched.includes(filmId) && e.target.textContent === 'Remove from watched') {
+  //   const filteredArr = JSON.parse(localStorage.getItem('arrayOfWatched')).filter(el => el !== filmId);
+  //   localStorage.setItem('arrayOfWatched', JSON.stringify(filteredArr));
+  //   console.log('удален');
+  //   btnAddToWatched.textContent = 'Add to watched';
+  //   // перезаписать
+  //   onWatchedBtn();
+  // }
+  // else {
+  //   arrayOfWatched.push(filmId);
+  //   localStorage.setItem('arrayOfWatched', JSON.stringify(arrayOfWatched));
+  //   console.log('добавлен')
+  //   btnAddToWatched.textContent = 'Remove from watched';
+
+  // }
   
 }
 
 // Функция добавления фильмов в очередь
 function addToQueue(e) {
-  const btnAddToQueue = modalCard.querySelector('.btn__queue');
   let filmId = e.target.dataset.id;
+  
+  if (e.target.textContent === 'Add to queue') {
+    
+    if (!arrayOfQueue.includes(filmId)) {
+      arrayOfQueue.push(filmId);
+    }
 
-  if (arrayOfQueue.includes(filmId) && e.target.textContent === 'Remove from queue') {
+    localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
+    e.target.textContent = 'Remove from queue';
+  }
+  else
+    if (arrayOfQueue.includes(filmId) && e.target.textContent === 'Remove from queue')
+  {
     const filteredArr = JSON.parse(localStorage.getItem('arrayOfQueue')).filter(el => el !== filmId);
     localStorage.setItem('arrayOfQueue', JSON.stringify(filteredArr));
-    console.log('нет такого в списке');
-    btnAddToQueue.textContent = 'Add to queue';
+    e.target.textContent = 'Add to queue';
   }
-  else {
-    arrayOfQueue.push(filmId);
-    localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
-    console.log('уже есть в списке')
-    btnAddToQueue.textContent = 'Remove from queue';
+  // если активна библиотека
+  if (document.querySelector('.nav-list__item-library-active')) {
+    onQueueBtn();
   }
 }
+
+// function addToQueue(e) {
+//   const btnAddToQueue = modalCard.querySelector('.btn__queue');
+//   let filmId = e.target.dataset.id;
+
+//   if (arrayOfQueue.includes(filmId) && e.target.textContent === 'Remove from queue') {
+//     const filteredArr = JSON.parse(localStorage.getItem('arrayOfQueue')).filter(el => el !== filmId);
+//     localStorage.setItem('arrayOfQueue', JSON.stringify(filteredArr));
+//     btnAddToQueue.textContent = 'Add to queue';
+//   }
+//   else {
+//     arrayOfQueue.push(filmId);
+//     localStorage.setItem('arrayOfQueue', JSON.stringify(arrayOfQueue));
+//     btnAddToQueue.textContent = 'Remove from queue';
+//   }
+// }
