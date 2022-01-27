@@ -36,6 +36,8 @@ const createAccount = async () => {
         Notify.failure('Check if all fields are filled correctly');
       } else if (error.message === 'Firebase: Error (auth/missing-email).') {
         Notify.failure('Enter your email, please.');
+      } else if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+        Notify.failure('Try another email.');
       } else {
         Notify.failure('Registration error. Try again');
       }
