@@ -84,30 +84,48 @@ function onLibrary(e) {
 
 }
 
-function onWatchedBtn() {
+export function onWatchedBtn() {
   galleryList.innerHTML = '';
 
   let watchedArray = localStorage.getItem('arrayOfWatched');
   watchedArray = JSON.parse(watchedArray);
  
-  if (watchedArray) {
+  if (watchedArray.length === 0) {
+    noSaved();
+  }
+
+  else
+    
+    if (watchedArray) {
     for (const filmId of watchedArray) {
       fetchSavedFilms(filmId)
         .then(savedFilms => {
+          // transformYear(savedFilms);
           renderSaved(savedFilms)
         })
         .catch(error => console.log(error));
     }
   }
+  
 }
 
-function onQueueBtn() {
+// function transformYear(savedFilms) {
+//   const release_date = savedFilms.release_date.slice(0, 4);
+//   console.log(release_date)
+//   return release_date
+// }
+
+export function onQueueBtn() {
   galleryList.innerHTML = '';
 
   let queueArray = localStorage.getItem('arrayOfQueue');
   queueArray = JSON.parse(queueArray);
  
-  if (queueArray) {
+  if (queueArray.length === 0) {
+     noSaved();
+  }
+   else
+     if (queueArray) {
     for (const filmId of queueArray) {
       fetchSavedFilms(filmId)
         .then(savedFilms => {
