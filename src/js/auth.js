@@ -23,7 +23,11 @@ const loginEmailPassword = async () => {
     refs.modal.classList.add('is-hidden');
     refs.signInBtn.classList.add('is-hidden');
   } catch (error) {
-    Notify.failure('Login error:( Try again!');
+    if (error.message === 'Firebase: Error (auth/invalid-email).') {
+      Notify.failure('Ivalid email. Please, try again!');
+    } else if (error.message === 'Firebase: Error (auth/internal-error).') {
+      Notify.failure('Check if all fields are filled correctly');
+    } else Notify.failure('Login error:( Try again!');
   }
 };
 

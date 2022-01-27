@@ -26,8 +26,19 @@ const createAccount = async () => {
       refs.modal.classList.add('is-hidden');
       refs.signInBtn.classList.add('is-hidden');
     } catch (error) {
-      Notify.failure('Registration error:( Try again!');
-      console.log(error);
+      if (error.message === 'Firebase: Error (auth/invalid-email).') {
+        Notify.failure('Ivalid email. Please, try again!');
+      } else if (
+        error.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).'
+      ) {
+        Notify.failure('Password should be at least 6 characters');
+      } else if (error.message === 'Firebase: Error (auth/internal-error).') {
+        Notify.failure('Check if all fields are filled correctly');
+      } else if (error.message === 'Firebase: Error (auth/missing-email).') {
+        Notify.failure('Enter your email, please.');
+      } else {
+        Notify.failure('Registration error. Try again');
+      }
     }
   } else Notify.failure('Passwords did not match');
 };
