@@ -41,7 +41,6 @@ const createAccount = async () => {
       } else {
         Notify.failure('Registration error. Try again');
       }
-      console.log(error.message);
     }
   } else Notify.failure('Passwords did not match');
 };
