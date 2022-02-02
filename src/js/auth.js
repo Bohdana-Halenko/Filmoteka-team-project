@@ -22,10 +22,8 @@ const loginEmailPassword = async () => {
     const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
     Notify.success('You are logged in!');
     refs.modal.classList.add('is-hidden');
-    refs.signInBtn.classList.add('is-hidden');
-    refs.signInBtn.classList.add('backdrop');
-    refs.logOutBtn.classList.remove('backdrop');
-    refs.logOutBtn.classList.remove('is-hidden');
+    refs.signInBtn.classList.add('is-hidden', 'backdrop');
+    refs.logOutBtn.classList.remove('backdrop', 'is-hidden');
   } catch (error) {
     if (error.message === 'Firebase: Error (auth/invalid-email).') {
       Notify.failure('Ivalid email. Please, try again!');
@@ -53,10 +51,8 @@ monitorAuthState();
 const logOut = async () => {
   event.preventDefault();
   await signOut(auth);
-  refs.signInBtn.classList.remove('is-hidden');
-  refs.signInBtn.classList.remove('backdrop');
-  refs.logOutBtn.classList.add('backdrop');
-  refs.logOutBtn.classList.add('is-hidden');
+  refs.signInBtn.classList.remove('is-hidden', 'backdrop');
+  refs.logOutBtn.classList.add('backdrop', 'is-hidden');
   Notify.info("You're logged out.");
 };
 

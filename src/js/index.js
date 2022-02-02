@@ -27,7 +27,7 @@ import './renderOnClickLogo';
 import API from './apiService';
 
 // import './darkOn';
-import './openNewWindow'
+import './openNewWindow';
 
 //Loader
 import './loader';
@@ -37,6 +37,7 @@ import './upBtn';
 import './fireBaseInit';
 import './auth';
 import './register';
+import './database';
 // Проверка работы API - это просто тест
 // API.getTrendingMovie().then(res => console.log('Trending res', res));
 // API.getMovieBySearch('comedy').then(res => console.log('Search res', res));
